@@ -1,0 +1,134 @@
+.container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 6rem;
+}
+.navBar{
+    position: fixed;
+    top: 0;
+}
+.orderDetails{
+    margin-top: 10rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+.backArrow{
+    height: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.body{
+    display: flex;
+}
+.orderedItems{
+    width: 55%;
+    border: 1px solid #03081F;
+    border-radius: 12px;
+    padding: 0 1rem 1rem 1rem;
+    box-sizing: border-box;
+}
+.orderedItem{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.itemName{
+    font-weight: 600;
+    margin-left: 1rem;
+
+}
+.itemName >*{
+    margin: 0.8rem 0;
+}
+
+.itemCount, .notes{
+    color: #83858A;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.cost{
+   color: #028643;
+   font-weight: 600;
+   margin-left: auto;
+}
+.noteInput{
+    border: 1px solid #202938;
+    outline: none;
+    border-radius: 100px;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+}
+.nextSteps{
+    flex: 1;
+    margin-left: 2rem;
+}
+.addressContainer{
+    display: flex;
+    border: 1px solid #03081F;
+    border-radius: 56px;
+    align-items: center;
+    justify-content: flex-start;
+    padding:0 1rem 0 0.5rem;
+    height: 3.8rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+.locationIcon{
+    height: 4rem;
+    margin-top: 0.5rem;
+}
+.addressContainer > * > *{
+    margin: 0;
+}
+.addOnAddress{
+    color: #83858A;
+    font-size: 0.8rem;
+}
+.greaterThanIcon{
+    margin-left: auto;
+    color: #FC8A06;
+    font-size: 1.5rem;
+}
+.items, .salesTax, .subTotal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #83858A;
+    margin: 0;
+    padding: 0 1rem;
+}
+.items > *,.salesTax>*{
+    margin: 0.6rem 0;
+}
+.subTotalCost{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: black;
+}
+.dividerLine{
+    width: 100%;
+    height: 1.2px;
+    /* border: 1px solid #202938; */
+    background-color: #83858A;
+}
+.payMethodBtn{
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    background-color: #FC8A06;
+    color: white;
+    height: 3rem;
+    cursor: pointer;
+    text-align: center;
+    width: 94%;
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}

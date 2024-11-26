@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.card{
+    position: relative;
+}
+.image{
+    width:42rem;
+}
+.dealContent{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+.text1{
+    background-color:white;
+    color: #03081F;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0  0 12px 12px;
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    position: absolute;
+    top: -1rem;
+    left: 4rem;
+}
+.content{
+    position: absolute;
+    bottom: 2rem;
+    left: 3.5rem;
+}
+.text2{
+    color: #FC8A06;
+    margin: 0;
+    font-size: 0.8rem;
+}
+.title{
+    color: white;
+    margin: 0.5rem 0;
+    font-size: 2rem;
+
+}
+button{
+    border: none;
+    outline: none;
+    border-radius: 120px;
+    background-color: #FC8A06;
+    color: white;
+    padding: 0 2.5rem;
+    cursor: pointer;
+    height: 2.3rem;
+    
+}

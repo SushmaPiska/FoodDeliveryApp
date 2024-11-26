@@ -1,0 +1,37 @@
+.container{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.category{
+    background-color: #F5F5F5;
+    border: 1px solid #0000001A;
+    border-radius: 12px;
+    padding-bottom: 0.6rem;
+    
+}
+.image{
+    width: 13rem;
+}
+
+.categoryName{
+    color: #03081F;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 1rem;
+}
+.restaurantNo{
+    color: #FC8A06;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 1rem;
+}

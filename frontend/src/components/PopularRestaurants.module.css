@@ -1,0 +1,26 @@
+.container{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card{
+    border-radius: 12px;
+
+}
+.image{
+    width: 13rem;
+    margin: 0;
+}
+.title{
+    background-color: #FC8A06;
+    padding: 1rem;
+    color: white;
+    margin: 0;
+    border-radius: 0 0 12px 12px;
+}

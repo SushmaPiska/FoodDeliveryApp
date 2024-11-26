@@ -1,0 +1,118 @@
+.container{
+    padding: 0 6rem;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+.backArrow{
+    height: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.body{
+    display: flex;
+}
+.paymentCards{
+    width: 60%;
+}
+.walletBox{
+    display: flex;
+    border: 1px solid #FFE8CE;
+    border-radius: 56px;
+    align-items: center;
+    justify-content: flex-start;
+    padding:0 1rem 0 0.5rem;
+    height: 3.8rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+.walletIcon{
+    height: 4rem;
+    margin-top: 0.5rem;
+}
+.walletBox > * > *{
+    margin: 0;
+}
+.balance{
+    color: #83858A;
+    font-size: 0.8rem;
+}
+.greaterThanIcon{
+    margin-left: auto;
+    color: #FC8A06;
+    font-size: 1.5rem;
+}
+.debitCards{
+    margin-top: 1rem;
+}
+.debitCard, .addDebitCard{
+    border: 1px solid #FFE8CE;
+    padding: 0.8rem 1rem ;
+    box-sizing: border-box;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.debitCardIcon{
+    color: #FC8A06;
+    background-color: #FFE8CE;
+    border-radius: 50%;
+    padding: 0.2rem 0.6rem;
+    box-sizing: border-box;
+    margin-right: 1rem;
+    font-weight: 600;
+    /* font-size: 1rem; */
+
+}
+.debitCardName{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.debitCardRadio{
+    margin-left: auto;
+    size: 2rem;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.addDebitCard> *{
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.proceed{
+    flex: 1;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    height: fit-content;
+    padding: 1.5rem ;
+    margin-left: 2rem;
+}
+.amount{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.lightText{
+    color: #83858A;
+}
+.cost{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.proceedBtn{
+    margin-top: 1rem;
+    width: 100%;
+}
+.dividerLine{
+    width: 100%;
+    height: 1.2px;
+    /* border: 1px solid #202938; */
+    background-color: #83858A;
+}

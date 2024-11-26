@@ -1,0 +1,72 @@
+body{
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #dcd9d9c9;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+}
+.div1{
+    /* background-color: antiquewhite; */
+}
+.div2{
+    /* background-color: aquamarine; */
+}
+.div3{
+    /* background-color: bisque; */
+}
+.div4{
+    /* background-color: aquamarine; */
+}
+.footLogo{
+    width: 13rem;
+}
+.appStore{
+    margin-top: 1.5rem;
+    width: 17rem;
+}
+.address{
+    max-width: 18rem;
+}
+.subscribeContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+    border-radius: 120px;
+   padding-left: 0.8rem ;
+   box-sizing: border-box;
+}
+.inputItem{
+    height: 3rem;
+    width: 100%;
+    /* margin: 0.7rem 0; */
+   outline: none;
+   border: none;
+   background: transparent;
+   font-size: 1rem;
+   
+}
+.subscribeBtn{
+    border: none;
+    outline: none;
+    border-radius: 120px;
+    background-color: #FC8A06;
+    color: white;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    height: 100%;
+}
+.socialIcon{
+    margin: 0.3rem;
+    cursor: pointer;
+}
+.foot{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #03081F;
+    color: white;
+}

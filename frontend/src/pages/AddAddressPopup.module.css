@@ -1,0 +1,47 @@
+.container{
+    padding: 1.5rem 1rem 3rem 1rem;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.addAddressIcon{
+    margin-right: 0.5rem;
+}
+.inputLine1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.input{
+    outline: none;
+    border: 1px solid #C5C5C580;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.inputText{
+    border: 1px solid #C5C5C580;
+    border-radius: 8px;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 11rem;
+    outline: none;
+    margin-bottom: 1rem;
+}
+.saveBtn{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #FC8A06;
+    color: white;
+    /* padding: 1rem 2.5rem; */
+    cursor: pointer;
+    float: right;
+}

@@ -1,0 +1,55 @@
+.conatiner{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+   
+}
+.deal1{
+    position: relative;
+    
+
+}
+.foodDealImage{
+    /* width: 27rem; */
+    width: 27rem;
+    /* width: 94%; */
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+}
+.discount{
+    background-color: #03081F;
+    color: white;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0  0 12px 12px;
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    position: absolute;
+    top: -1rem;
+    right: 3rem;
+}
+.dealContent{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+.restaurant{
+    color: #FC8A06;
+    margin: 0;
+    font-size: 1.1rem;
+}
+.restaurantName{
+    color: white;
+    margin: 0.5rem 0;
+    font-size: 1.45rem;
+
+}

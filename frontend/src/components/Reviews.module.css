@@ -1,0 +1,84 @@
+.container{
+    padding: 0 1rem;
+
+}
+
+.reviewHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* padding: 0 2rem; */
+}
+.reviewHead{
+    margin-right: auto;
+    font-size: 2rem;
+}
+.nextBtn{
+    background-color: #FC8A06;
+    border-radius: 50%;
+    padding: 1rem;
+    height: 1rem;
+    width: 1rem;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-left: 1.4rem;
+    cursor: pointer;
+}
+.reviewBody{
+    display: flex;
+    align-items: ccenter;
+    justify-content: space-between;
+}
+.reviewCard{
+    background-color: white;
+    width: 26.6rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.profilePic{
+    height: 3.3rem;
+}
+.divider{
+    width: 2px;
+    height: 3rem;
+    background-color: #FC8A06;
+    margin: 0 0.5rem;
+}
+.custName{
+    font-weight: 600;
+    margin: 0;
+}
+.custLocation{
+    color: #FC8A06;
+    margin: 0;
+}
+.ratingBox{
+    color: #FC8A06;
+    margin-left: auto;
+    text-align: right;
+    
+}
+.fiveStar{
+    font-size: 1.3rem;
+}
+.timeSpan{
+    display: flex;
+    align-items: center;
+}
+.clockIcon{
+    color: #FC8A06;
+    margin-right: 0.3rem;
+}
+.date{
+    color: black;
+    font-size: 0.9rem;
+}
+.reviewText{
+    /* font-size: 1cap;
+     */
+}

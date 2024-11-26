@@ -1,0 +1,184 @@
+.container{
+
+    width: 110%;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    background-color: #F9F9F9;
+}
+.shareCart{
+    background-color: #FC8A06;
+    /* width: 20%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+    
+    
+}
+.shareIcon{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+.copyBtn{
+    background-color: white;
+    color: #FC8A06;
+    border-radius: 100px;
+    margin: 0;
+    width: 60%;
+    padding: 0 0.3rem;
+    font-weight: 550;
+}
+.basket{
+  
+    border-radius: 8px;
+    border: 1px solid #0000001C;
+   
+  
+
+}
+.basketHead{
+    background-color: #028643;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 4rem;
+    border: 1px solid #0000001C;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    border-radius: 8px 8px 0 0;
+    
+}
+.cartItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+}
+.itemCount{
+    background-color: #FC8A06;
+    color: white;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 0.7rem 1rem;
+}
+.cost{
+    color: #028643;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+
+}
+.itemName{
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 0;
+}
+.extraText{
+    margin: 0.3rem 0;
+}
+.removeIcon{
+    cursor: pointer;
+}
+
+.subTotal,.discounts,.deliveryFee{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    height: 2.7rem;
+
+}
+.bill{
+    padding: 0 2rem  ;
+    font-weight: 600;
+    border-top: 1px  solid #00000033;
+    border-bottom: 1px  solid #00000033;
+    padding-bottom: 1rem;
+}
+.amount{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.totalAndCoupon{
+    padding: 0 1rem;
+    box-sizing: border-box;
+    /* padding :  0 1.5rem; */
+    border-bottom: 1px  solid #00000033;
+}
+.totalToPay,.freeItem,.couponCode{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem  ;
+    margin : 1rem 0rem;
+
+}
+.totalToPay{
+    background: #FC8A06CC;
+    font-weight: 600;
+    border-radius: 8px;
+    /* width: 15rem; */
+    height: 3.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.totalCost{
+    font-size: 1.5rem;
+}
+.freeItem,.couponCode{
+    /* font-weight: 350; */
+    font-size: small;
+    border: 1px solid #CFCFCF;
+    border-radius: 120px;
+    /* width: 15rem; */
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem  1rem;
+}
+.deliveryTime{
+    border: 1px solid #00000033;
+    background-color: #EEEEEE;
+    border-radius: 12px;
+    padding: 1.5rem;
+
+}
+.subHead{
+    font-weight: 550;
+    margin: 0;
+}
+.timing{
+    margin: 0;
+}
+.checkout{
+    display: flex;
+    align-items: center;
+    background-color: #028643;
+    color: white;
+    padding:0 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 1rem;
+    border: 1px solid #0000001C;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.checkoutIcon{
+    width: 3rem;
+    height: 3rem;
+    margin-right: 3rem;
+}

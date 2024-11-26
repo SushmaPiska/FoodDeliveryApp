@@ -1,0 +1,4 @@
+"name":"sush",
+  "phone":1234567890,
+  "email":"s@gmail.com",
+  "password":"password"

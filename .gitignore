@@ -1,0 +1,57 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build directories
+dist/
+build/
+out/
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Linting and testing
+.eslintcache
+.nyc_output/
+coverage/
+
+# Next.js/Vercel specific
+.next/
+.vercel/
+
+# Generated files
+*.log
+*.lock
+*.bak
+*.tmp
+*.pid
+*.seed
+*.orig
+
+# Ignore todo.txt files
+
+
+*.copyText.txt

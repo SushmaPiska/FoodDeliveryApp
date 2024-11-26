@@ -1,0 +1,65 @@
+.container {
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.foodCard {
+  display: flex;
+  border: 1px solid #0000001a;
+  border-radius: 12px;
+  box-shadow: 5px 5px 34px 0px #00000040;
+  /* width: fit-content; */
+  padding: 1.2rem 1.4rem 0 1.4rem;
+  box-sizing: border-box;
+  width: 27.3rem;
+  /* width: 42%; */
+
+  justify-content: space-evenly;
+  margin: 0.5rem;
+}
+.header {
+  margin: 0.5rem 0.2rem 0.6rem 0;
+}
+.foodContent {
+  font-size: 0.82rem;
+  margin: 0;
+}
+.right {
+  position: relative;
+}
+.image {
+  height: 10.2rem;
+}
+.addBtn {
+  position: absolute;
+  bottom: 1.7rem;
+  right: 0;
+  background-color: #ffffffdd;
+  width: 5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  
+
+  border-radius: 45px 0px 12px 0px;
+  /* opacity: 0.9px; */
+}
+.addIcon {
+  background-color: black;
+  color: white;
+  width: fit-content;
+  margin: 0 auto;
+  margin-left: 1.5rem;
+  margin-top: 0.6rem;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  cursor: pointer;
+}

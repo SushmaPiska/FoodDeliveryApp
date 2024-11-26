@@ -1,0 +1,115 @@
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+}
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #0000001A;
+  background-color: #FAFAFA;
+}
+.div1,
+.div2,
+.div3 {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  width: 30rem;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+.div1 {
+  width: 30rem;
+}
+.promoOrders {
+  color: #fc8a06;
+  cursor: pointer;
+}
+.div3 {
+  border: 1px solid #0000001a;
+  background-color: #028643;
+  width: 20rem;
+  border-radius: 0px 0px 12px 12px;
+  border: 1px 0px 0px 0px;
+  padding: 0  1rem;
+  justify-content:flex-start;
+  cursor: pointer;
+}
+.icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.6rem;
+}
+.changeLocation{
+    color: #FC8A06;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.cartIcon{
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+.cartShowIcon{
+    margin-left: auto;
+}
+.whiteText{
+    color: white;
+}
+
+.navBody{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* padding: 2rem 0; */
+}
+.logo{
+    height: 2.6rem;
+    margin-right: auto;
+}
+/* .homeBtn{
+    border: none;
+    outline: none;
+    border-radius: 120px;
+    background-color: #FC8A06;
+    color: white;
+    padding: 0 2.5rem;
+    cursor: pointer;
+    height: 2.3rem;
+    margin: 0 2rem;
+} */
+.navItem{
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 1rem ;
+    box-sizing: border-box;
+    border-radius: 12px;
+    /* margin-left: 4rem; */
+    width: 10rem;
+    /* margin: auto; */
+    text-align: center;
+}
+.navItem:hover{
+    background-color: rgb(246, 248, 248);
+}
+.loginBtn{
+    border: none;
+    outline: none;
+    border-radius: 120px;
+    color: white;
+    padding: 0 1rem;
+    cursor: pointer;
+    /* height: 2.3rem; */
+    background-color: #03081F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 9rem;
+    margin-left: 1.5rem;
+}

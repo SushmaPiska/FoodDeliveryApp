@@ -1,0 +1,33 @@
+.container{
+    padding: 0 6rem;
+}
+.body{
+    text-align: center;
+    margin: 2rem 0;
+}
+.orderSuccessIcon{
+    border-radius: 50%;
+    border: 20px solid #e0e2e3a7;
+}
+.successMsg{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.lightText{
+    color: #83858A;
+    max-width: 25rem;
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+.orderedItems{
+    border: 1px solid #00000080;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 1.5rem auto;
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.9rem;
+}
+.backHomeBtn{
+    width: 20rem;
+    font-size: 1rem;
+}

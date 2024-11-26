@@ -1,0 +1,47 @@
+.container{
+    box-shadow: 5px 5px 14px 0px #00000040;
+    background-color:#FBFBFB;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box; 
+    height: 34rem;
+    margin-bottom: 2rem; 
+}
+
+.container > *{
+    flex: 1;
+}
+.deliveryInfo, .contactInfo{
+    padding:  4rem 3rem;
+    padding-top: 5rem;
+}
+.contactInfo{
+    line-height: 1.7rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.head{
+    font-size: 1.5rem;
+    font-weight: 700;
+    
+}
+.subHead{
+    font-weight: 600;
+}
+.phone, .website{
+    font-size: 1.3rem;
+}
+
+.timings{
+    background-color: #03081F;
+    color: white;
+    height: 100%;
+    padding: 4rem 3rem;
+    padding-top: 5rem;
+    box-sizing: border-box;
+}

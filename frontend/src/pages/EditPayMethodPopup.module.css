@@ -1,0 +1,12 @@
+.container{
+    margin: 0;
+}
+.footer{
+    background-color: #FC8A06;
+    display: flex;
+}
+.removeBtn{
+    background-color: #663700;
+    border-radius: 12px;
+    padding: 1rem;
+}
