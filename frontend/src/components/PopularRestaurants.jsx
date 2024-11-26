@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './popularRestaurants.module.css'
+import styles from './PopularRestaurants.module.css'
 import popularRest from '../assets/popularRest.png'
 import { useNavigate } from 'react-router-dom'
 function PopularRestaurants() {
