@@ -2,3 +2,109 @@
   "phone":1234567890,
   "email":"s@gmail.com",
   "password":"password"
+
+  /////////////////////
+    "restaurant":"Butterbrot Caf’e London",
+  "discount":37,
+  "imageUrl":"https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732184429/Group_8_1_wrwkob.png"
+
+  ///////////////
+  const handleSignin = async () => {
+    
+    // e.preventDefault();
+    // let isError = false;
+    // setError({ email: false, password: false });
+    // setBackendError("");
+
+    // Validate fields
+    // Object.keys(errorMessages).forEach((key) => {
+    //   if (!errorMessages[key].isValid) {
+    //     isError = true;
+    //     errorMessages[key].onError();
+    //   }
+    // });
+    // if (!isError) {
+      try {
+        if (!email || !password) {
+          return res.status(400).json({ error: 'Email and password are required' });
+      }
+        
+        const response = await axios.post(
+          `${import.meta.env.VITE_BASE_URL}/api/auth/signin`,
+          { email: email, password: password },
+          // { withCredentials: true }
+        );
+
+        if (!email || !password) {
+          return res.status(400).json({ error: 'Email and password are required' });
+      }
+        
+        
+        console.log("Logged in successfully", response.data);
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(response.data));
+        toast.success("Login successful");
+        navigate("/dashboard");
+      } catch (error) {
+        console.log(error)
+        // if (
+        //   error.response &&
+        //   error.response.data &&
+        //   error.response.data.error
+        // ) {
+        //   setBackendError(error.response.data.error);
+        // } else {
+        //   setBackendError("Network error. Please try again.");
+        // }
+      }
+    // }else{
+    //   console.log("error ")
+    // }
+  };
+
+
+  ///////////server.js//////////////////
+  import path from "path";
+import express from "express";
+import dotenv from "dotenv";
+import userRouter from "./routes/user.routes.js";
+import foodDealRouter from "./routes/foodDeal.routes.js";
+import connectToMongoDB from "./db/connectToMongoDB.js";
+import cors from "cors";
+
+dotenv.config({ path: "./backend/.env" });
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+const __dirname = path.resolve();
+
+app.use(express.json()); 
+const allowedOrigins = ['http://localhost:5173', 'https://taskmanagementapp-4.onrender.com','https://taskmanagementapp-0mlj.onrender.com'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, origin);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+//   credentials: true,
+}));
+
+app.use("/api/auth", userRouter);
+app.use("/api/deals", foodDealRouter);
+
+app.use(cors());
+
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
+
+app.listen(PORT, () => {
+  connectToMongoDB();
+  console.log(`server is running on port ${PORT} `);
+});

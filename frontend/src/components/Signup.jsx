@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Signup.module.css";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 function Signup() {
-  const navigate=useNavigate()
-  const handleSignin=()=>{
-    navigate('/Signin')
-  }
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const handleSignup = async () => {
+    try {
+      await axios.post(`${baseUrl}/api/auth/signup`, {
+        name,
+        phone,
+        email,
+        password
+      });
+      // toast.success("Registration successful!");
+      navigate("/signin");
+    } catch (err) {
+      // setLoading(false);
+      if (err.response) {
+        console.log(err.response.data.error);
+
+        // setBackendError(err.response.data.error);
+      } else {
+        console.log("Error details:", err);
+        // setBackendError("Network error. Please try again.");
+      }
+    }
+  };
+  const handleSignin = () => {
+    navigate("/signin");
+  };
   return (
     <div className={styles.container}>
       <img src={logo} alt="" className={styles.logo} />
@@ -22,8 +52,9 @@ function Signup() {
           <input
             type="text"
             placeholder="eg. John A"
+            value={name}
             className={styles.inputItem}
-            //   onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -31,8 +62,9 @@ function Signup() {
           <input
             type="phone"
             placeholder="Enter your 10 digit mobile number"
+            value={phone}
             className={styles.inputItem}
-            //   onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -40,9 +72,9 @@ function Signup() {
           <input
             type="email"
             placeholder="Example@email.com"
-            //   value={email}
+              value={email}
             className={styles.inputItem}
-            //   onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className={styles.inputContainer}>
@@ -50,14 +82,21 @@ function Signup() {
           <input
             type="password"
             placeholder="At least 8 characters"
+            value={password}
             className={styles.inputItem}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <button className={styles.signupBtn}>Sign up</button>
+        <button className={styles.signupBtn} onClick={handleSignup}>
+          Sign up
+        </button>
       </div>
       <p className={styles.bottomText}>
-        Already have an account? <span className={styles.signin} onClick={handleSignin}>Sign in</span>
+        Already have an account?{" "}
+        <span className={styles.signin} onClick={handleSignin}>
+          Sign in
+        </span>
       </p>
     </div>
   );
