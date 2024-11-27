@@ -42,6 +42,9 @@ app.use("/api/deals", foodDealRouter);
 
 // Serve static files from frontend build
 app.use(express.static(path.join(__dirname, "frontend", "dist")));
+
+app.use(express.static(__dirname + '/public'));
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
