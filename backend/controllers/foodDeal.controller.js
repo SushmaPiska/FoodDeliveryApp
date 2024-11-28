@@ -31,3 +31,5 @@ export const getFoodDeals = async(req,res) => {
         res.status(400).json({ message: "Error retrieving food deals" });
     }
 };
+
+

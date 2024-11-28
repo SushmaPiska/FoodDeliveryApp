@@ -2,12 +2,20 @@
   "phone":1234567890,
   "email":"s@gmail.com",
   "password":"password"
-
+//////////////////////
+"foodItemUrl":"https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732723696/Rectangle_46_6_siyiwd.png",
+  "name":"Cold Drinks",
+ "details":"1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
+ "cost":40
   /////////////////////
     "restaurant":"Butterbrot Caf’e London",
   "discount":37,
   "imageUrl":"https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732184429/Group_8_1_wrwkob.png"
-
+///////////////////////////
+"foodItemUrl":"https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732723659/Rectangle_46_2_m5m6kf.png",
+ "name":"Fries",
+ "details":"1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
+ "cost":70
   ///////////////
   const handleSignin = async () => {
     

@@ -54,23 +54,43 @@
     border-radius: 8px 8px 0 0;
     
 }
+.cartItems{
+   margin: 0;
+   padding: 0;
+}
 .cartItem{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1.5rem;
+    justify-content: flex-start;
+    /* padding-right: 1rem; */
+    /* width: 100%; */
+    border-bottom: 1px solid #00000033;
+    padding: 0.2rem 2rem;
+    /* padding: 0.5rem 1.5rem; */
 }
+/* .itemDetails{
+    margin: 0;
+
+} */
+/* .dividerLine{
+    width: 100%;
+    height: 1px;
+    background-color: 00000033;
+    
+} */
 .itemCount{
     background-color: #FC8A06;
     color: white;
     font-weight: 600;
     border-radius: 50%;
     padding: 0.7rem 1rem;
+    margin-right: 1.5rem;
 }
 .cost{
     color: #028643;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    /* margin-bottom: 0.2rem;  */
+    margin: 0;
 
 }
 .itemName{
@@ -83,6 +103,11 @@
 }
 .removeIcon{
     cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
+.removeIcon:active{
+    transform: scale(0.85);
 }
 
 .subTotal,.discounts,.deliveryFee{
@@ -95,7 +120,6 @@
 .bill{
     padding: 0 2rem  ;
     font-weight: 600;
-    border-top: 1px  solid #00000033;
     border-bottom: 1px  solid #00000033;
     padding-bottom: 1rem;
 }
@@ -164,10 +188,13 @@
 .timing{
     margin: 0;
 }
+.checkoutContainer{
+    position: relative;
+}
 .checkout{
+    background-color: #028643;
     display: flex;
     align-items: center;
-    background-color: #028643;
     color: white;
     padding:0 1.5rem;
     font-weight: 700;
@@ -176,9 +203,64 @@
     border: 1px solid #0000001C;
     border-radius: 8px;
     cursor: pointer;
+    /* cursor: crosshair; */
+    
+  
 }
+.checkoutDisabled{
+    background-color: #FFB1B1;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding:0 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 1rem;
+    border: 1px solid #0000001C;
+    border-radius: 8px;
+    cursor: not-allowed;
+}
+.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 120%; /* Position below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a2e; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 0.8rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Positioned at the top of the tooltip box */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #1a1a2e transparent; /* Arrow pointing up */
+  }
+  
+  .checkoutContainer:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  
 .checkoutIcon{
     width: 3rem;
     height: 3rem;
     margin-right: 3rem;
+}
+.colored{
+    color: #FC8A06;
 }

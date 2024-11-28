@@ -136,9 +136,10 @@
 .foodDeals{
     margin-bottom: 3rem;
 }
-.burgers{
+.foodItems{
     width: 100%;
 }
+
 .cart{
     width: 20rem;
 }
@@ -150,4 +151,7 @@
     height: 25rem;
     background-color: #D9D9D9;
    
+}
+.color{
+    color: #FC8A06;
 }

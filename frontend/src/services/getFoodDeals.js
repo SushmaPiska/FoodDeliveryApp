@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-export const getFoodDeals=()=>{
-    const foodDeals=axios.get('http://localhost:5000/api/deals/getFoodDeals')
+export const getFoodDeals=async()=>{
+    const foodDeals=await axios.get(`${import.meta.env.VITE_BASE_URL}/api/deals/getFoodDeals`)
 
     return foodDeals;
 }

@@ -38,13 +38,18 @@
     align-items: center;
     justify-content: flex-start;
 }
+.foodImage{
+    width: 3rem;
+    border-radius: 8px;
+}
 .itemName{
+    margin: 1rem ;
     font-weight: 600;
     margin-left: 1rem;
 
 }
 .itemName >*{
-    margin: 0.8rem 0;
+    margin: 0;
 }
 
 .itemCount, .notes{

@@ -1,8 +1,13 @@
 .container {
   padding: 0;
   box-sizing: border-box;
-  margin-bottom: 2rem;
+ 
+}
+.foodItems{
+  padding: 0;
   display: flex;
+  margin-bottom: 2rem;
+  
   flex-wrap: wrap;
   width: 100%;
 }
@@ -12,9 +17,9 @@
   border-radius: 12px;
   box-shadow: 5px 5px 34px 0px #00000040;
   /* width: fit-content; */
-  padding: 1.2rem 1.4rem 0 1.4rem;
+  padding: 1.2rem 1.4rem ;
   box-sizing: border-box;
-  width: 27.3rem;
+  width: 26.6rem;
   /* width: 42%; */
 
   justify-content: space-evenly;
@@ -35,7 +40,7 @@
 }
 .addBtn {
   position: absolute;
-  bottom: 1.7rem;
+  bottom: 0rem;
   right: 0;
   background-color: #ffffffdd;
   width: 5rem;

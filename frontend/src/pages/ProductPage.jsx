@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProductPage.module.css";
 import NavBar from "../components/NavBar";
 import PopularRestaurants from "../components/PopularRestaurants";
@@ -16,9 +16,27 @@ import Reviews from "../components/Reviews";
 import MoreInfo from "../components/MoreInfo.jsx";
 import FoodItems from "../components/FoodItems.jsx";
 import Cart from "../components/Cart.jsx";
-function ProductPage() {
+import { getFoodItems } from "../services/getFoodItems";
+import { getCartItems } from "../services/cartItemsService.js";
+
+function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,amount}) {
   const [isCartOpen, setIsCartOpen]=useState(false)
+  const [burgers,setBurgers]=useState([]);
+  const [fries,setFries]=useState([]);
+  const [coldDrinks,setColdDrinks]=useState([]);
   
+  useEffect(() => {
+    getFoodItems("Burger")
+      .then((res) => setBurgers(res.data))
+      .catch((err) => console.log("error in getting burgers", err));
+    getFoodItems("Fries")
+      .then((res) => setFries(res.data))
+      .catch((err) => console.log("error in getting fries", err));
+    getFoodItems("Cold Drinks")
+      .then((res) => setColdDrinks(res.data))
+      .catch((err) => console.log("error in getting cold drinks", err));
+  }, []);
+
   return (
     <>
       <div className={styles.container}>
@@ -82,13 +100,22 @@ function ProductPage() {
             <div className={styles.foodDeals}>
               <FoodDeals />
             </div>
-            <div className={styles.burgers}>
-              <FoodItems />
+            <h1>Burgers</h1>
+            <div className={styles.foodItems}>
+              <FoodItems foodItems={burgers} setIsCartChanged={setIsCartChanged}/>
+            </div>
+            <h1 className={styles.color}>Fries</h1>
+            <div className={styles.foodItems}>
+              <FoodItems foodItems={fries} setIsCartChanged={setIsCartChanged}/>
+            </div>
+            <h1 className={styles.color}>Cold Drinks</h1>
+            <div className={styles.foodItems}>
+              <FoodItems foodItems={coldDrinks} setIsCartChanged={setIsCartChanged}/>
             </div>
           </div>
           {isCartOpen && 
           <div className={styles.cart}>
-            <Cart/>
+            <Cart cartItems={cartItems} setIsCartChanged={setIsCartChanged} amount={amount}/>
           </div>
           }
           

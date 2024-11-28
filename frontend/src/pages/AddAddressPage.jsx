@@ -12,6 +12,10 @@ import AddAddressPopup from "./AddAddressPopup";
 function AddAddressPage() {
   const navigate = useNavigate();
   const [isAddAddressPopupOpen, setIsAddAddressPopupOpen]=useState(false)
+
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const userName = user && user.name ? user.name : "Guest";
+
   const handleBack = () => {
     navigate("/checkout");
   };
@@ -21,6 +25,7 @@ function AddAddressPage() {
   const closeAddAddressPopup=()=>{
     setIsAddAddressPopupOpen(false)
   }
+  
   return (
     <>
       <div className={styles.container}>
@@ -53,7 +58,9 @@ function AddAddressPage() {
                 <AddAddressPopup closePopup={closeAddAddressPopup}/>
 
             </Popup>
-            <div className={styles.address}></div>
+            <div className={styles.address}>
+              <h4>{userName}</h4>
+            </div>
             <div className={styles.address}></div>
           </div>
         </div>

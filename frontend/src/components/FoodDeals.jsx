@@ -7,16 +7,15 @@ import { getFoodDeals } from "../services/getFoodDeals.js";
 function Deals() {
   const [foodDeals, setFoodDeals] = useState([]);
   useEffect(() => {
-    // getFoodDeals().then(res=>setFoodDeals(res.data))
-    // .catch(err=>console.log("error in getting food deals", err))
+    getFoodDeals().then(res=>setFoodDeals(res.data))
+    .catch(err=>console.log("error in getting food deals", err))
   }, []);
 
   return (
     <div className={styles.container}>
       
       <div className={styles.body}>
-        {/* <ul className={styles.foodDeals}>
-          {console.log(foodDeals)}
+        <ul className={styles.foodDeals}>
           {foodDeals?.map((foodDeal, key) => (
             <li key={key} className={styles.deal1}>
               <img
@@ -31,31 +30,8 @@ function Deals() {
               </div>
             </li>
           ))}
-        </ul> */}
-        <div className={styles.deal1}>
-          <img src={foodDealImage} alt="" className={styles.foodDealImage} />
-          <p className={styles.discount}>-40%</p>
-          <div className={styles.dealContent}>
-            <p className={styles.restaurant}>Restaurant</p>
-            <h3 className={styles.restaurantName}>Chef Burgers London</h3>
-          </div>
-        </div>
-        <div className={styles.deal1}>
-          <img src={foodDealImage} alt="" className={styles.foodDealImage} />
-          <p className={styles.discount}>-40%</p>
-          <div className={styles.dealContent}>
-            <p>Restaurant</p>
-            <h3>Chef Burgers London</h3>
-          </div>
-        </div>
-        <div className={styles.deal1}>
-          <img src={foodDealImage} alt="" className={styles.foodDealImage} />
-          <p className={styles.discount}>-40%</p>
-          <div className={styles.dealContent}>
-            <p>Restaurant</p>
-            <h3>Chef Burgers London</h3>
-          </div>
-        </div>
+        </ul>
+        
       </div>
     </div>
   );
