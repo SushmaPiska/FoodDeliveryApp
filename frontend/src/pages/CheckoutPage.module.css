@@ -8,6 +8,8 @@
 .navBar{
     position: fixed;
     top: 0;
+    width: calc(100% - 12rem); 
+
 }
 .orderDetails{
     margin-top: 10rem;

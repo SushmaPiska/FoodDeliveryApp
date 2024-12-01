@@ -7,6 +7,15 @@
   "name":"Cold Drinks",
  "details":"1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
  "cost":40
+ //////////////////////
+  "cardNumber":1234567123,
+ "expiration":"12/24",
+ "cvc":123,
+ "nameOnCard":"qwerty"
+ //////////////////////////////
+ "itemCount":1,
+  "name":"Cold Drinks",
+  "cost":40
   /////////////////////
     "restaurant":"Butterbrot Caf’e London",
   "discount":37,

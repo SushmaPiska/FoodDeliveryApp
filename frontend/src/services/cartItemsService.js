@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getCartItems=async(name)=>{
+export const getCartItems=async()=>{
     const cartItems=await axios.get(`${import.meta.env.VITE_BASE_URL}/api/cartItems/getCartItems`)
 
     return cartItems;

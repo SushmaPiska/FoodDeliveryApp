@@ -1,12 +1,107 @@
 .container{
-    margin: 0;
+    padding: 0;
 }
-.footer{
-    background-color: #FC8A06;
-    display: flex;
-}
-.removeBtn{
-    background-color: #663700;
+  
+  .modal {
+    background: white;
     border-radius: 12px;
-    padding: 1rem;
-}
+    padding: 0 3rem 2rem 3rem;
+    position: relative;
+    text-align: left;
+  }
+  
+  .modalTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .formGroup {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    margin-bottom: 0.8rem;
+  }
+  
+  .formGroup label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 30%; 
+  }
+  
+  .formGroup input {
+    flex: 1; 
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    border: 2px solid #AFAFAF;
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .modalActions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #FC8A06;
+    padding: 1.5rem;
+    
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .btnRemove {
+    background: #5a3901; 
+    color: white;
+    margin-right: auto;
+
+  }
+  
+  .btnCancel {
+    background: #ff8c00; 
+    color: white;
+  }
+  
+  .btnSave {
+   
+    background: #f3f3f3; 
+    color: #000000;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Responsive Design */
+  /* @media (max-width: 600px) {
+    .modal {
+      width: 90%;
+      padding: 16px;
+    }
+  
+    .modalActions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .formGroup {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .formGroup label {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  } */
+  

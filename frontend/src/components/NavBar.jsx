@@ -12,10 +12,16 @@ function NavBar({setIsCartOpen,isCartOpen}) {
   const handleShowCart=()=>{
     setIsCartOpen(!isCartOpen)
   }
+  const handleHome=()=>{
+    navigate('/home')
+  }
   const handleProfile=()=>{
     navigate('/profilePage')
 
   }
+  
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const userName = user && user.name ? user.name : "Guest";
   return (
     <div className={styles.container}>
       <div className={styles.navTop}>
@@ -39,14 +45,14 @@ function NavBar({setIsCartOpen,isCartOpen}) {
       </div>
       <div className={styles.navBody}>
         <img src={logo} alt="" className={styles.logo}/>
-        <p className={styles.navItem}>Home</p>
+        <p className={styles.navItem} onClick={handleHome}>Home</p>
         <p className={styles.navItem}>Browse Menu</p>
         <p className={styles.navItem}>Special Offers</p>
         <p className={styles.navItem}>Restaurants</p>
         <p className={styles.navItem}>Track Order</p>
         <button className={styles.loginBtn} onClick={handleProfile}>
             <img src={userIcon} alt="" />
-            <p>Login/Signup</p>
+            <p>Hey {userName}</p>
         </button>
       </div>
     </div>

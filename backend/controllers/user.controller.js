@@ -70,3 +70,27 @@ export const signin = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+export const updateProfile=async(req,res)=>{
+  try {
+    const { id } = req.params;
+    const { name, email, gender, country } = req.body;
+
+    
+    let user = await User.findById(id);
+    console.log(user);
+    if (!user) {
+      return res.status(400).json({ message: "user not found" });
+    }
+    user = await User.findByIdAndUpdate(
+      id,
+      { name, email, gender, country },
+      { new: true }
+    );
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ message: "user not updated" });
+  }
+}

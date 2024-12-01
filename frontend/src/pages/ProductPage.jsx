@@ -19,7 +19,7 @@ import Cart from "../components/Cart.jsx";
 import { getFoodItems } from "../services/getFoodItems";
 import { getCartItems } from "../services/cartItemsService.js";
 
-function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,amount}) {
+function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,amount, productClicked}) {
   const [isCartOpen, setIsCartOpen]=useState(false)
   const [burgers,setBurgers]=useState([]);
   const [fries,setFries]=useState([]);
@@ -48,7 +48,7 @@ function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,a
           <div className={styles.adComponent}>
             <div className={styles.leftAd}>
               <p>I'm lovin' it!</p>
-              <h2 className={styles.adHead}>McDonald's East London</h2>
+              <h2 className={styles.adHead}>{productClicked} </h2>
               <div className={styles.featuresAd}>
                 <div className={styles.featureAd}>
                   <img src={orderCompleted} alt="" className={styles.adIcon} />
@@ -75,7 +75,7 @@ function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,a
           </div>
         </div>
         <div className={styles.searchBar}>
-          <h2>All Offers from McDonald's East London</h2>
+          <h2>All Offers from {productClicked}</h2>
           <div className={styles.search}>
             <img src={searchIcon} alt="" className={styles.searchIcon} />
             <p>Search from menu...</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProfilePage.module.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -10,19 +10,67 @@ import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import EditPayMethodPopup from "./EditPayMethodPopup";
-function ProfilePage() {
+import { sliceMethod } from "../helper/sliceMethod";
+import axios from "axios";
 
+function ProfilePage({ paymentCards, setIsPaymentCardsChanged }) {
   const navigate = useNavigate();
-  const [isEditPopupOpen, setIsEditPopupOpen]=useState(false)
+  const [isEditPopupOpen, setIsEditPopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [isEditModeOn, setIsEditModeOn] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const userId = user && user._id;
+
+  const [profileData, setProfileData] = useState({
+    fullName: user.name,
+    email: user.email,
+    gender:user.gender,
+    country:user.country,
+  });
+
   const handleBack = () => {
     navigate("/home");
   };
-  const openEditPopup=()=>{
-    setIsEditPopupOpen(true)
-  }
-  const closeEditPopup=()=>{
-    setIsEditPopupOpen(false)
-  }
+  const openEditPopup = (paymentCard = null) => {
+    setIsEditPopupOpen(true);
+    setSelectedCard(paymentCard);
+  };
+  const closeEditPopup = () => {
+    setIsEditPopupOpen(false);
+    setSelectedCard(null);
+  };
+
+  
+  const handleEditToggle = async () => {
+    if (isEditModeOn) {
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_BASE_URL}/api/auth/updateProfile/${userId}`,
+          {
+            name: profileData.fullName,
+            email: profileData.email,
+            gender: profileData.gender,
+            country: profileData.country,
+          }
+        );
+        console.log(response.data);
+  
+        localStorage.setItem("user", JSON.stringify(response.data));
+      } catch (error) {
+        console.error("Error updating profile:", error.response?.data || error.message);
+      }
+    }
+    setIsEditModeOn(!isEditModeOn);
+  };
+  
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProfileData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <div className={styles.container}>
@@ -42,76 +90,108 @@ function ProfilePage() {
           <div className={styles.profileHead}>
             <img src={myProfilePic} alt="" />
             <span className={styles.myName}>My Name</span>
-            <button className={styles.editBtn}>Edit</button>
+            <button className={styles.editBtn} onClick={handleEditToggle}>
+              {isEditModeOn ? "Save" : "Edit"}
+            </button>
           </div>
           <div className={styles.myDetails}>
             <div className={styles.inputItem}>
               <label htmlFor="fullName">Full Name</label>
-              <input
-                type="text"
-                name="fullName"
-                defaultValue="My Name"
-                className={styles.inputField}
-              />
+              {isEditModeOn ? (
+                <input
+                  type="text"
+                  name="fullName"
+                  value={profileData.fullName}
+                  onChange={handleInputChange}
+                  className={`${styles.inputField} ${styles.editModeInput}`}
+                />
+              ) : (
+                <p className={styles.inputField}>{profileData.fullName}</p>
+              )}
             </div>
             <div className={styles.inputItem}>
               <label htmlFor="fullName">Email Address</label>
-              <input
-                type="text"
-                name="fullName"
-                defaultValue="My Name"
-                className={styles.inputField}
-              />
+              {isEditModeOn ? (
+                <input
+                  type="email"
+                  name="email"
+                  value={profileData.email}
+                  onChange={handleInputChange}
+                  className={`${styles.inputField} ${styles.editModeInput}`}
+                />
+              ) : (
+                <p className={styles.inputField}>{profileData.email}</p>
+              )}
             </div>
             <div className={styles.inputItem}>
               <label htmlFor="fullName">Gender</label>
-              <input
-                type="text"
-                name="fullName"
-                defaultValue="My Name"
-                className={styles.inputField}
-              />
+              {isEditModeOn ? (
+                <input
+                  type="text"
+                  name="gender"
+                  value={profileData.gender}
+                  onChange={handleInputChange}
+                  className={`${styles.inputField} ${styles.editModeInput}`}
+                />
+              ) : (
+                <p className={styles.inputField}>{profileData.gender}</p>
+              )}
             </div>
             <div className={styles.inputItem}>
               <label htmlFor="fullName">Country</label>
-              <input
-                type="text"
-                name="fullName"
-                defaultValue="My Name"
-                className={styles.inputField}
-              />
+              {isEditModeOn ? (
+                <input
+                  type="text"
+                  name="country"
+                  value={profileData.country}
+                  onChange={handleInputChange}
+                  className={`${styles.inputField} ${styles.editModeInput}`}
+                />
+              ) : (
+                <p className={styles.inputField}>{profileData.country}</p>
+              )}
             </div>
           </div>
-          <div className={styles.dividerLine}>
-
-          </div>
-          <p>Saved Payment Methods</p>
+          <div className={styles.dividerLine}></div>
+          <h3>Saved Payment Methods</h3>
           <div className={styles.paymentMethods}>
-
-            <div className={styles.paymentCard}>
+            {paymentCards?.map((paymentCard, key) => (
+              <div key={key} className={styles.paymentCard}>
                 <img src={paymentCard} alt="" />
                 <div className={styles.cardNum}>
-                    <p>xxxx xxxx xxxx 1234</p>
-                    <p className={styles.lightText}>My Name</p>
+                  <p>xxxx xxxx xxxx {sliceMethod(paymentCard.cardNumber)}</p>
+                  <p className={styles.lightText}>{paymentCard.nameOnCard}</p>
                 </div>
-                <img src={editIcon} alt="" className={styles.editIcon} onClick={openEditPopup}/>
-            </div>
-            <Popup
-                open={isEditPopupOpen}
-                onClose={closeEditPopup}
-                modal 
-                nested
-                className={styles.popup}
-                contentStyle={{width:"60%"}}
-            >
-                <EditPayMethodPopup/>
+                <img
+                  src={editIcon}
+                  alt=""
+                  className={styles.editIcon}
+                  onClick={() => openEditPopup(paymentCard)}
+                />
+              </div>
+            ))}
 
+            <Popup
+              open={isEditPopupOpen}
+              onClose={closeEditPopup}
+              modal
+              nested
+              className={styles.popup}
+              contentStyle={{ width: "40%" }}
+            >
+              <EditPayMethodPopup
+                card={selectedCard}
+                closePopup={closeEditPopup}
+                setIsPaymentCardsChanged={setIsPaymentCardsChanged}
+              />
             </Popup>
-            <div className={styles.addNewCard}>
-                <p className={styles.addIcon}>+</p>
-                <p>Add New Card</p>
+            <div
+              className={styles.addNewCard}
+              onClick={() => openEditPopup(null)}
+            >
+              <p className={styles.addIcon}>+</p>
+              <p>Add New Card</p>
             </div>
-            
           </div>
         </div>
       </div>

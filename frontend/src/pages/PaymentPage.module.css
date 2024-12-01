@@ -2,9 +2,17 @@
     padding: 0 6rem;
     box-sizing: border-box;
 }
+.navBar{
+    width: calc(100% - 12rem); 
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 .header{
     display: flex;
     align-items: center;
+    margin-top: 11rem;
 }
 .backArrow{
     height: 2rem;
@@ -13,6 +21,7 @@
 }
 .body{
     display: flex;
+    
 }
 .paymentCards{
     width: 60%;
@@ -115,4 +124,5 @@
     height: 1.2px;
     /* border: 1px solid #202938; */
     background-color: #83858A;
+    
 }

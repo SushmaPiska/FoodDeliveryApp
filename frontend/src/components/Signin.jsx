@@ -6,7 +6,6 @@ import axios from "axios";
 // import { toast } from "react-toastify";
 
 function Signin() {
-  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,41 +19,49 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [backendError, setBackendError] = useState("");
 
-  // const [error, setError] = useState({
-  //   email: false,
-  //   password: false,
-  // });
+  const [error, setError] = useState({
+    email: false,
+    password: false,
+  });
 
-  // const errorMessages = {
-  //   email: {
-  //     message: "Email is required",
-  //     isValid: email.length > 0,
-  //     onError: () => {
-  //       setError((error) => ({ ...error, email: true }));
-  //     },
-  //   },
-  //   password: {
-  //     message: "Password is required",
-  //     isValid: password.length > 0,
-  //     onError: () => {
-  //       setError((error) => ({ ...error, password: true }));
-  //     },
-  //   },
-  // };
+  const errorMessages = {
+    email: {
+      message: "Email is required",
+      isValid: email.length > 0,
+      onError: () => {
+        setError((error) => ({ ...error, email: true }));
+      },
+    },
+    password: {
+      message: "Password is required",
+      isValid: password.length > 0,
+      onError: () => {
+        setError((error) => ({ ...error, password: true }));
+      },
+    },
+  };
 
+  const handleSignin = async () => {
+    let isError = false;
+    setError({ email: false, password: false });
+    setBackendError("");
 
-const handleSignin = async () => {
-    // Validate fields before making the request
+    Object.keys(errorMessages).forEach((key) => {
+      if (!errorMessages[key].isValid) {
+        isError = true;
+        errorMessages[key].onError();
+      }
+    });
     if (!email || !password) {
-        console.log('Email and password are required');
-        return;
+      console.log("Email and password are required");
+      return;
     }
-
-    try {
+    if (!isError) {
+      try {
         const response = await axios.post(
-            `${import.meta.env.VITE_BASE_URL}/api/auth/signin`, 
-            { email, password }, 
-            { withCredentials: true } // Uncomment if credentials are required
+          `${import.meta.env.VITE_BASE_URL}/api/auth/signin`,
+          { email, password },
+          { withCredentials: true }
         );
 
         console.log("Logged in successfully", response.data);
@@ -62,20 +69,20 @@ const handleSignin = async () => {
         const token = response.data.token;
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(response.data));
-        
+
         // toast.success("Login successful");
         navigate("/home");
-    } catch (error) {
+      } catch (error) {
         console.error("Error during login:", error);
 
         if (error.response?.data?.error) {
-            console.log(error.response.data.error);
+          setBackendError(error.response.data.error);
         } else {
-            console.log("Network error. Please try again.");
+          setBackendError("Network error. Please try again.");
         }
+      }
     }
-};
-
+  };
 
   const handleSignup = () => {
     navigate("/");
@@ -95,10 +102,13 @@ const handleSignin = async () => {
           <input
             type="email"
             placeholder="Example@email.com"
-              value={email}
+            value={email}
             className={styles.inputItem}
-              onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
+          {error.email && (
+          <p className={styles.errorMessage}>* {errorMessages.email.message}</p>
+        )}
         </div>
         <div className={styles.inputContainer}>
           <p className={styles.inputTitle}>Password</p>
@@ -109,7 +119,11 @@ const handleSignin = async () => {
             className={styles.inputItem}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error.password && (
+          <p className={styles.errorMessage}>* {errorMessages.password.message}</p>
+        )}
         </div>
+        {backendError && <div className={styles.errorMessage}>* {backendError}</div>}
         <p className={styles.forgotPassword}>Forgot Password?</p>
         <button className={styles.signinBtn} onClick={handleSignin}>
           Sign in

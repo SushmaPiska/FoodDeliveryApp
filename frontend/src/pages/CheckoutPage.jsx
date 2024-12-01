@@ -9,6 +9,10 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 function CheckoutPage({ orderedItems, amount }) {
   const navigate = useNavigate();
+
+  
+
+
   const handleBack = () => {
     navigate("/productPage");
   };
@@ -57,41 +61,7 @@ function CheckoutPage({ orderedItems, amount }) {
                   <div className={styles.dividerLine}></div>
                 </>
               ))}
-              {/* </ul> */}
-              {/* <div className={styles.orderedItem}>
-              <img src={orderedFood} alt="" />
-              <div className={styles.itemName}>
-                <p>Royal Cheese Burger</p>
-                <p className={styles.itemCount}>1x item</p>
-              </div>
-              <p className={styles.cost}>₹120</p>
-            </div>
-
-          <div className={styles.orderedItems}>
-            <div className={styles.orderedItem}>
-              <img src={orderedFood} alt="" />
-              <div className={styles.itemName}>
-                <p>Royal Cheese Burger</p>
-                <p className={styles.itemCount}>1x item</p>
-              </div>
-              <p className={styles.cost}>₹120</p>
-            </div>
-            <div className={styles.orderedItem}>
-              <img src={orderedFood} alt="" />
-              <div className={styles.itemName}>
-                <p>Royal Cheese Burger</p>
-                <p className={styles.itemCount}>1x item</p>
-              </div>
-              <p className={styles.cost}>₹120</p>
-            </div>
-            <div className={styles.orderedItem}>
-              <img src={orderedFood} alt="" />
-              <div className={styles.itemName}>
-                <p>Royal Cheese Burger</p>
-                <p className={styles.itemCount}>1x item</p>
-              </div>
-              <p className={styles.cost}>₹120</p>
-            </div> */}
+              
               <div className={styles.notes}>
                 <p>Notes</p>
                 <input

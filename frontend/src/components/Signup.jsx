@@ -10,9 +10,60 @@ function Signup() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [backendError, setBackendError] = useState("");
+
+  const [error, setError] = useState({
+    name: { message: "", isVisible: false },
+    phone: { message: "", isVisible: false },
+    email: { message: "", isVisible: false },
+    password: { message: "", isVisible: false },
+  });
+
+  const frontendErrorMessages = {
+    name: {
+      message: "Name is required",
+      isValid: name.length > 0,
+    },
+    phone:{
+      message: "Phone is required",
+      isValid: email.length > 0,
+    },
+    email: {
+      message: "Email is required",
+      isValid: email.length > 0,
+    },
+    password: {
+      message: "Password is required",
+      isValid: password.length > 0,
+    }
+  };
+
 
   const navigate = useNavigate();
   const handleSignup = async () => {
+    let isError = false;
+    setBackendError("")
+    setError({
+      name: { message: "", isVisible: false },
+      phone: { message: "", isVisible: false },
+      email: { message: "", isVisible: false },
+      password: { message: "", isVisible: false },
+      
+    });
+
+    Object.keys(frontendErrorMessages).forEach((key) => {
+      if (!frontendErrorMessages[key].isValid) {
+        isError = true;
+        setError((prevError) => ({
+          ...prevError,
+          [key]: {
+            message: frontendErrorMessages[key].message,
+            isVisible: true,
+          },
+        }));
+      }
+    });
+    if (!isError) {
     try {
       await axios.post(`${baseUrl}/api/auth/signup`, {
         name,
@@ -32,7 +83,7 @@ function Signup() {
         console.log("Error details:", err);
         // setBackendError("Network error. Please try again.");
       }
-    }
+    }}
   };
   const handleSignin = () => {
     navigate("/signin");
@@ -56,6 +107,9 @@ function Signup() {
             className={styles.inputItem}
               onChange={(e) => setName(e.target.value)}
           />
+          {error.name.isVisible && (
+          <p className={styles.errorMessage}>* {error.name.message}</p>
+        )}
         </div>
         <div className={styles.inputContainer}>
           <p className={styles.inputTitle}>Phone Number</p>
@@ -66,6 +120,9 @@ function Signup() {
             className={styles.inputItem}
               onChange={(e) => setPhone(e.target.value)}
           />
+          {error.phone.isVisible && (
+          <p className={styles.errorMessage}>* {error.phone.message}</p>
+        )}
         </div>
         <div className={styles.inputContainer}>
           <p className={styles.inputTitle}>Email</p>
@@ -76,6 +133,9 @@ function Signup() {
             className={styles.inputItem}
               onChange={(e) => setEmail(e.target.value)}
           />
+          {error.email.isVisible && (
+          <p className={styles.errorMessage}>* {error.email.message}</p>
+        )}
         </div>
         <div className={styles.inputContainer}>
           <p className={styles.inputTitle}>Password</p>
@@ -86,8 +146,11 @@ function Signup() {
             className={styles.inputItem}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error.password.isVisible && (
+            <p className={styles.errorMessage}>* {error.password.message}</p>
+          )}
         </div>
-
+        {backendError && <div className={styles.errorMessage}>* {backendError}</div>}
         <button className={styles.signupBtn} onClick={handleSignup}>
           Sign up
         </button>

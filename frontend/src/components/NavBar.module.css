@@ -2,8 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  width: 100%;
+  /* width: 100%; */
   background-color: white;
+  /* width: 80%; */
 }
 .navTop {
   display: flex;
@@ -17,14 +18,14 @@
   display: flex;
   align-items: center;
   /* justify-content: space-evenly; */
-  width: 30rem;
+  /* width: 30rem; */
   margin-left: 1rem;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 0;
 }
 .div1 {
-  width: 30rem;
+  /* width: 30rem; */
 }
 .promoOrders {
   color: #fc8a06;
@@ -103,13 +104,16 @@
     outline: none;
     border-radius: 120px;
     color: white;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     cursor: pointer;
     /* height: 2.3rem; */
     background-color: #03081F;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 9rem;
     margin-left: 1.5rem;
+}
+.loginBtn> :first-child{
+  margin-right: 0.2rem;
 }

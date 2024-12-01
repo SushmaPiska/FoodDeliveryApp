@@ -9,7 +9,7 @@
     position: relative;
 }
 .image{
-    width:42rem;
+    width:100%;
 }
 .dealContent{
     position: absolute;

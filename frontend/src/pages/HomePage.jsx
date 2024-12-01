@@ -10,10 +10,10 @@ import KnowMore from "../components/KnowMore";
 import people from "../assets/people.png";
 import logo from "../assets/logo.png";
 import appStore from "../assets/appStore.png";
-function HomePage() {
+function HomePage({setProductClicked}) {
   return (<>
     <div className={styles.container}>
-      <div className={styles.navBar}>
+      <div className={styles.navBarr}>
         <NavBar />
       </div>
       <div className={styles.body}>
@@ -38,7 +38,7 @@ function HomePage() {
           <FoodCategories />
         </div>
         <div className={styles.popularRest}>
-          <PopularRestaurants />
+          <PopularRestaurants setProductClicked={setProductClicked}/>
         </div>
         <div className={styles.advertisement}>
           <div className={styles.leftAd}>

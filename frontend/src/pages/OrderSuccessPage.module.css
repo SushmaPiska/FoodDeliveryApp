@@ -1,9 +1,18 @@
 .container{
     padding: 0 6rem;
 }
+.navBar{
+    width: calc(100% - 12rem); 
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 .body{
     text-align: center;
     margin: 2rem 0;
+    margin-bottom: 5rem;
+    margin-top: 11rem;
 }
 .orderSuccessIcon{
     border-radius: 50%;

@@ -3,6 +3,13 @@
     padding: 0 6rem;
     box-sizing: border-box;
 }
+.navBar{
+    width: calc(100% - 12rem); 
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 .header{
     display: flex;
     align-items: center;
@@ -14,13 +21,17 @@
 }
 .body{
     margin-bottom: 2rem;
+    margin-top: 12rem
 }
 .addressContainer{
     display: flex;
     margin-bottom: 20rem;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    height: 13rem;
 }
 .addAddress{
-    height: 12rem;
+    height: 13rem;
     width: 16rem;
     border: 1px dashed #AFAFAF;
     text-align: center;
@@ -40,9 +51,43 @@
     cursor: pointer;
 }
 .address{
-    height: 12rem;
+    /* height: 13rem; */
+    height: 100%;
     width: 16rem;
     border: 1px solid #AFAFAF;
     border-radius: 12px;
     margin-right: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-size: 0.89rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.addressHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addressHead >*{
+    margin: 0;
+}
+.default{
+    background-color: #FFEDD8;
+    color: #FC8A06;
+    border-radius: 100px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+}
+.addressFooter{
+    color: #FC8A06;
+    margin-top: auto;
+}
+.editBtn, .removeBtn{
+    cursor: pointer;
+    
+}
+.separate{
+    color: #AFAFAF;
 }

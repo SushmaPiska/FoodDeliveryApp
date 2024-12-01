@@ -8,6 +8,7 @@ import restaurantRouter from "./routes/restaurants.routes.js";
 import foodItemRouter from "./routes/foodItem.routes.js";
 import cartItemRouter from "./routes/cartItems.routes.js";
 import addressRouter from "./routes/address.routes.js";
+import paymentCardRouter from "./routes/payment.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import cors from "cors";
 
@@ -49,6 +50,7 @@ app.use("/api/restaurants", restaurantRouter);
 app.use("/api/foodItems", foodItemRouter);
 app.use("/api/cartItems", cartItemRouter);
 app.use("/api/address", addressRouter);
+app.use("/api/paymentCards", paymentCardRouter);
 
 // Serve static files from frontend build
 app.use(express.static(path.join(__dirname, "frontend", "dist")));
