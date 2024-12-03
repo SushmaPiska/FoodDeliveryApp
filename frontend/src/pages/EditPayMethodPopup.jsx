@@ -10,8 +10,6 @@ function EditPayMethodPopup({ closePopup, setIsPaymentCardsChanged, card }) {
   const [cvc, setCvc] = useState("");
   const [nameOnCard, setNameOnCard] = useState("");
 
-  console.log(card)
-  // Populate fields if editing a card
   useEffect(() => {
     if (card) {
       setCardNumber(card.cardNumber || "");
@@ -19,7 +17,6 @@ function EditPayMethodPopup({ closePopup, setIsPaymentCardsChanged, card }) {
       setCvc(card.cvc || "");
       setNameOnCard(card.nameOnCard || "");
     } else {
-      // Reset fields for adding a new card
       setCardNumber("");
       setExpiration("");
       setCvc("");
@@ -29,6 +26,8 @@ function EditPayMethodPopup({ closePopup, setIsPaymentCardsChanged, card }) {
 
   const handleSavePaymentCard = async () => {
     try {
+      const token = localStorage.getItem("token"); 
+
       const endpoint = card
         ? `${import.meta.env.VITE_BASE_URL}/api/paymentCards/updatePaymentCard/${card._id}`
         : `${import.meta.env.VITE_BASE_URL}/api/paymentCards/addPaymentCard`;
@@ -38,6 +37,11 @@ function EditPayMethodPopup({ closePopup, setIsPaymentCardsChanged, card }) {
         expiration,
         cvc,
         nameOnCard,
+      },
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
       });
 
       setIsPaymentCardsChanged(true);
@@ -61,6 +65,7 @@ function EditPayMethodPopup({ closePopup, setIsPaymentCardsChanged, card }) {
 
   const handleDelete = async () => {
     try {
+      
       if (card) {
         await deletePaymentCard(card._id)
           .then((res) => console.log(res.data))

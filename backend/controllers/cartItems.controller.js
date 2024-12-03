@@ -3,10 +3,11 @@ import CartItem from "../models/cartItem.model.js";
 export const addToCart = async (req, res) => {
   try {
     const {itemUrl, itemCount, name, cost } = req.body;
-    if (!itemUrl || !itemCount || !name || !cost) {
+   
+    if (!itemCount || !name || !cost) {
       return res.status(400).json({ error: "Missing required fields" });
     }
-    let cartItem = await CartItem.findOne({ name: name });
+    let cartItem = await CartItem.findOne({userId:req.user.userId, name: name });
 
     if (cartItem) {
       cartItem = await CartItem.findOneAndUpdate(
@@ -22,7 +23,7 @@ export const addToCart = async (req, res) => {
          
         );
     }
-    const newCartItem = new CartItem({itemUrl, itemCount, name, cost });
+    const newCartItem = new CartItem({userId:req.user.userId,itemUrl, itemCount, name, cost });
 
     if (newCartItem) {
       await newCartItem.save();
@@ -41,7 +42,7 @@ export const addToCart = async (req, res) => {
 export const getCartItems = async (req, res) => {
   try {
     // const { name } = req.body;
-    const cartItems = await CartItem.find();
+    const cartItems = await CartItem.find({ userId: req.user.userId});
     if (!cartItems) {
       return res.status(404).json({ message: "Cart Items not found" });
     }

@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const paymentCardSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "User" 
+},
   cardNumber: {
     type: Number,
     required: true,

@@ -13,6 +13,7 @@ import { getAddresses } from "../services/addressService";
 import { AddressContext } from "../context/AddressContext";
 
 function NavBar({ setIsCartOpen, isCartOpen }) {
+  // const [addresses, setAddresses]=useState(useContext(AddressContext));
   const navigate = useNavigate();
   const handleShowCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -21,12 +22,16 @@ function NavBar({ setIsCartOpen, isCartOpen }) {
     navigate("/home");
   };
   const handleProfile = () => {
+    // if(!token){
+    //   navigate('/signin')
+    // }
     navigate("/profilePage");
   };
   
-
-  const addresses = useContext(AddressContext);
-  const defaultAddress = addresses[0]?.fullAddress || "Set Your Location";
+  let addresses = useContext(AddressContext);
+  // console.log(addresses)
+  const defaultAddress =addresses[0]?.fullAddress || "Set Your Location";
+  // console.log(addresses)
 
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userName = user && user.name ? user.name : "Guest";

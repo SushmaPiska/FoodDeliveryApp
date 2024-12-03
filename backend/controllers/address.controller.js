@@ -4,9 +4,9 @@ export const addAddress = async (req, res) => {
   try {
     const { userId, state, district, pincode, phone, fullAddress, isDefault } =
       req.body;
-    // if (!itemUrl || !itemCount || !name || !cost) {
-    //   return res.status(400).json({ error: "Missing required fields" });
-    // }
+    if (!userId || !state || !district || !pincode || !phone || !fullAddress || !isDefault) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
 
     const newAddress = new Address({
       userId,
@@ -15,7 +15,7 @@ export const addAddress = async (req, res) => {
       pincode,
       phone,
       fullAddress,
-      isDefault,
+      isDefault:true,
     });
 
     if (newAddress) {
@@ -43,7 +43,9 @@ export const addAddress = async (req, res) => {
 
 export const getAddresses = async (req, res) => {
   try {
-    const addresses = await Address.find();
+    console.log(req.user.userId)
+    const addresses = await Address.find({ userId: req.user.userId});
+
     if (!addresses) {
       return res.status(404).json({ message: "addresses not found" });
     }
@@ -52,32 +54,27 @@ export const getAddresses = async (req, res) => {
     res.status(400).json({ message: "Error retrieving addresses" });
   }
 };
-
+/////////////////pending///////////
 export const updateAddress=async(req,res)=>{
   try {
     const { id } = req.params;
-    const { title, priority, assignee, checkList, dueDate } = req.body;
+    const {state, district, pincode, phone, fullAddress } = req.body;
 
-    console.log(req.user);
-    const assigneeId = mongoose.Types.ObjectId.isValid(assignee)
-      ? mongoose.Types.ObjectId(assignee)
-      : null;
-
-    let task = await Task.findById(id);
-    console.log(task);
-    if (!task) {
-      return res.status(400).json({ message: "Job not found" });
+    let address = await Address.findById(id);
+    console.log(address);
+    if (!address) {
+      return res.status(400).json({ message: "address not found" });
     }
-    task = await Task.findByIdAndUpdate(
+    address = await Address.findByIdAndUpdate(
       id,
-      { title, priority, assignee: assigneeId, checkList, dueDate },
+      { state, district, pincode, phone, fullAddress },
       { new: true }
     );
 
-    res.status(200).json(task);
+    res.status(200).json(address);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ message: "Task not updated" });
+    res.status(400).json({ message: "address not updated" });
   }
 }
 

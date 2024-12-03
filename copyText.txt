@@ -7,6 +7,16 @@
   "name":"Cold Drinks",
  "details":"1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
  "cost":40
+ ///////////////////////////
+  "itemUrl":"https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732723688/Rectangle_46_5_zzvrga.png",
+  "itemCount":1,
+  "name":"Cold Drinks",
+  "cost":40
+ ///////////////////////////
+  "name":"kkkk",
+  "email":"kk@gmail.com",
+  "gender":"female",
+  "country":"India"
  //////////////////////
   "cardNumber":1234567123,
  "expiration":"12/24",

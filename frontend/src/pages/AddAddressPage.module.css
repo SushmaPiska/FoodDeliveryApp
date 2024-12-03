@@ -29,10 +29,12 @@
     margin-bottom: 20rem;
     flex-wrap: wrap;
     row-gap: 2rem;
+    height: 14rem;
+
     /* height: 13rem; */
 }
 .addAddress{
-    height: 13rem;
+    height: 100%;
     width: 16rem;
     border: 1px dashed #AFAFAF;
     text-align: center;

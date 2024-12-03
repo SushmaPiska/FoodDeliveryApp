@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     getCartItems()
-      .then((res) => setCartItems(res.data))
+      .then((res) => setCartItems(res))
       .catch((err) => console.log("error in getting cart items", err))
       .finally(() => setIsCartChanged(false));
   }, [isCartChanged]);
@@ -53,7 +53,7 @@ function App() {
 
   useEffect(() => {
     getPaymentCards()
-      .then((res) => setPaymentCards(res.data))
+      .then((res) => setPaymentCards(res))
       .catch((err) => console.log("error in getting paymentCards", err))
       .finally(() => setIsPaymentCardsChanged(false));
   }, [isPaymentCardsChanged]);

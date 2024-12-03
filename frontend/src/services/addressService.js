@@ -1,11 +1,26 @@
 import axios from "axios";
 
 export const getAddresses = async () => {
-  const addresses = await axios.get(
-    `${import.meta.env.VITE_BASE_URL}/api/address/getAddresses`
-  );
+  try {
+    const token = localStorage.getItem("token"); 
+    const response = await axios.get(
+      `${import.meta.env.VITE_BASE_URL}/api/address/getAddresses`,
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      }
+    );
+    return response.data; 
+  } catch (error) {
+    console.error("Error in getting addresses:", error.response?.data || error.message);
+    throw error; 
+  }
+  // const addresses = await axios.get(
+  //   `${import.meta.env.VITE_BASE_URL}/api/address/getAddresses`
+  // );
 
-  return addresses;
+  // return addresses;
 };
 
 export const addAddress = async (address) => {
@@ -30,8 +45,15 @@ export const addAddress = async (address) => {
 };
 
 export const deleteAddress = async (addressId) => {
+  const token = localStorage.getItem("token"); 
+
   const address = await axios.delete(
-    `${import.meta.env.VITE_BASE_URL}/api/address/deleteAddress/${addressId}`
+    `${import.meta.env.VITE_BASE_URL}/api/address/deleteAddress/${addressId}`,
+    {
+      headers: {
+        Authorization: `${token}`,
+      },
+    }
   );
 
   return address;

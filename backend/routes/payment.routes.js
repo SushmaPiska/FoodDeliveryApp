@@ -1,11 +1,12 @@
 import express from 'express';
 import { addPaymentCard, getPaymentCards,deletePaymentCard, updatePaymentCard } from '../controllers/payment.controller.js';
+import { authenticateToken } from '../middleware/authToken.js';
 
 const router=express.Router()
 
-router.post('/addPaymentCard',addPaymentCard)
-router.get('/getPaymentCards',getPaymentCards)
-router.delete('/deletePaymentCard/:id',deletePaymentCard)
-router.post('/updatePaymentCard/:id',updatePaymentCard)
+router.post('/addPaymentCard',authenticateToken,addPaymentCard)
+router.get('/getPaymentCards',authenticateToken,getPaymentCards)
+router.delete('/deletePaymentCard/:id',authenticateToken,deletePaymentCard)
+router.post('/updatePaymentCard/:id',authenticateToken,updatePaymentCard)
 
 export default router;

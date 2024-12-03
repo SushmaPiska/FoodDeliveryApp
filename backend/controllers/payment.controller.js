@@ -6,8 +6,7 @@ export const addPaymentCard=async(req,res)=>{
         if (!cardNumber || !expiration || !cvc || !nameOnCard) {
           return res.status(400).json({ error: "Missing required fields" });
         }
-    
-        const newPaymentCard = new PaymentCard({
+        const newPaymentCard = new PaymentCard({userId:req.user.userId,
             cardNumber, expiration, cvc, nameOnCard
         });
     
@@ -28,7 +27,7 @@ export const addPaymentCard=async(req,res)=>{
 }
 export const getPaymentCards=async(req,res)=>{
     try {
-        const paymentCards = await PaymentCard.find();
+        const paymentCards = await PaymentCard.find({ userId: req.user.userId});
         if (!paymentCards) {
           return res.status(404).json({ message: "paymentCards not found" });
         }

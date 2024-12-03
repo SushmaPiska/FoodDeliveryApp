@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext,useEffect, useState } from "react";
 import styles from "./AddAddressPage.module.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -9,10 +9,13 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import AddAddressPopup from "./AddAddressPopup";
 import { deleteAddress } from "../services/addressService";
+import { AddressContext } from "../context/AddressContext";
 
-function AddAddressPage({ addresses, setIsAddressChanged }) {
+function AddAddressPage({   }) {
   const navigate = useNavigate();
   const [isAddAddressPopupOpen, setIsAddAddressPopupOpen] = useState(false);
+
+  const [selectedAddress, setSelectedAddress]=useState();
 
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userName = user && user.name ? user.name : "Guest";
@@ -20,11 +23,13 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
   const handleBack = () => {
     navigate("/checkout");
   };
-  const openAddAddressPopup = () => {
+  const openAddAddressPopup = (address=null) => {
     setIsAddAddressPopupOpen(true);
+    setSelectedAddress(address)
   };
   const closeAddAddressPopup = () => {
     setIsAddAddressPopupOpen(false);
+    setSelectedAddress(null)
   };
 
   const handleRemoveAddress = async (address) => {
@@ -44,6 +49,9 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
       return "60%";
     }
   };
+  let {addresses, setIsAddressChanged}  = useContext(AddressContext);
+  //  const defaultAddress =addresses[0]?.fullAddress || "Set Your Location";
+// console.log(addresses)
 
   return (
     <>
@@ -64,7 +72,7 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
           </div>
           <div className={styles.addressContainer}>
             <div className={styles.addAddress}>
-              <p className={styles.addIcon} onClick={openAddAddressPopup}>
+              <p className={styles.addIcon} onClick={()=>openAddAddressPopup(null)}>
                 +
               </p>
               <p>Add Address</p>
@@ -80,10 +88,10 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
               <AddAddressPopup
                 closePopup={closeAddAddressPopup}
                 setIsAddressChanged={setIsAddressChanged}
+                address={selectedAddress}
               />
             </Popup>
 
-            {/* <ul className={styles.addressContainer}> */}
             {addresses?.map((address, key) => (
               <li key={key} className={styles.address}>
                 <div className={styles.addressHead}>
@@ -97,9 +105,8 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
                   <br /> {address.state},{address.pincode}
                 </p>
                 <p className={styles.phone}>Phone Number: {address.phone}</p>
-                {/* <br /> */}
                 <div className={styles.addressFooter}>
-                  <span className={styles.editBtn}>Edit </span>
+                  <span className={styles.editBtn} onClick={()=>openAddAddressPopup(address)}>Edit </span>
                   <span className={styles.separate}>|</span>
                   <span
                     className={styles.removeBtn}

@@ -40,7 +40,7 @@ function CheckoutPage({ orderedItems, amount }) {
             <ul className={styles.orderedItems}>
               {orderedItems?.map((orderedItem, key) => (
                 <>
-                  <li className={styles.orderedItem}>
+                  <li key={key} className={styles.orderedItem}>
                     <img
                       src={orderedItem.itemUrl}
                       alt=""
