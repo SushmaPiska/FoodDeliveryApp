@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 .navBar{
-    width: calc(100% - 12rem); 
+    /* width: calc(100% - 12rem);  */
+    width: 100%;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -125,4 +126,35 @@
     /* border: 1px solid #202938; */
     background-color: #83858A;
     
+}
+@media (max-width: 768px) {
+    .container{
+        padding: 0;
+        width: 100%;
+    }
+    .header{
+        margin-top: 17rem;
+        padding: 0 1rem;
+    }
+    .body{
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+       
+    }
+    .proceed{
+        margin: 1rem;
+    }
+    .paymentCards{
+        width: 100%;
+    }
+    .walletBox{
+        padding: 0;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+    .footer{
+        display: none;
+    }
 }

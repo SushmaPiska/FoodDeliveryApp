@@ -37,13 +37,21 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
       console.error("Error deleting address:", error.message);
     }
   };
+  const getPopupWidth = () => {
+    if (window.innerWidth <= 768) {
+      return "90%";
+    } else {
+      return "60%";
+    }
+  };
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.navBar}>
+     <div className={styles.navBar}>
           <NavBar />
         </div>
+      <div className={styles.container}>
+       
         <div className={styles.body}>
           <div className={styles.header}>
             <img
@@ -67,7 +75,7 @@ function AddAddressPage({ addresses, setIsAddressChanged }) {
               modal
               nested
               className={styles.popup}
-              contentStyle={{ width: "60%" }}
+              contentStyle={{ width:getPopupWidth() }}
             >
               <AddAddressPopup
                 closePopup={closeAddAddressPopup}

@@ -46,3 +46,29 @@
     cursor: pointer;
     float: right;
 }
+
+@media (max-width: 768px) {
+    .container{
+        padding: 1rem;
+        padding-bottom: 3rem;
+        /* padding-left: 0; */
+    }
+    .inputLine1{
+        flex-direction: column;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .input{
+        margin-bottom: 1rem;
+        width: 100%;
+
+    }
+    .inputText{
+        height: 8rem;
+        width: 100%;
+    }
+    .saveBtn{
+        width: 100%;
+    }
+}

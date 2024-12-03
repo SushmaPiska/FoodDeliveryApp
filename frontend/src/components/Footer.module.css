@@ -1,14 +1,21 @@
 body{
     padding: 0;
     box-sizing: border-box;
+    width: 100%; 
+    object-fit: cover; 
+}
+.container{
+    width: 100%; 
+    object-fit: cover; 
 }
 .body{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     background-color: #dcd9d9c9;
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
     box-sizing: border-box;
+    
 }
 .div1{
     /* background-color: antiquewhite; */
@@ -69,4 +76,24 @@ body{
     justify-content: space-evenly;
     background-color: #03081F;
     color: white;
+}
+.foot2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+        /* padding: 0; */
+    }
+    .div3, .div4{
+        text-align: left;
+    }
+    .foot2{
+        display: none;
+    }
 }

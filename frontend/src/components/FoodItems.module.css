@@ -19,8 +19,8 @@
   /* width: fit-content; */
   padding: 1.2rem 1.4rem ;
   box-sizing: border-box;
-  width: 26.6rem;
-  /* width: 42%; */
+  /* width: 26.6rem; */
+  width: 32%;
 
   justify-content: space-evenly;
   margin: 0.5rem;
@@ -67,4 +67,11 @@
   font-size: 2rem;
   line-height: 2.3rem;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .foodCard{
+    width: 100%;
+  }
+
 }

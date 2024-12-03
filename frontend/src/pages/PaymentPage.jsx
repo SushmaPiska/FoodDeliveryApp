@@ -16,10 +16,11 @@ function PaymentPage() {
   return (
     
     <>
-    <div className={styles.container}>
-      <div className={styles.navBar}>
+    <div className={styles.navBar}>
         <NavBar />
       </div>
+    <div className={styles.container}>
+      
       <div className={styles.header}>
         <img
           src={backArrow}
@@ -81,7 +82,7 @@ function PaymentPage() {
         </div>
       </div>
     </div>
-    <div className="footer">
+    <div className={styles.footer}>
         <Footer/>
     </div></>
   );

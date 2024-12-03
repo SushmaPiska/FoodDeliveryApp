@@ -8,7 +8,8 @@
 .navBar{
     position: fixed;
     top: 0;
-    width: calc(100% - 12rem); 
+    /* width: calc(100% - 12rem);  */
+    width: 100%;
 
 }
 .orderDetails{
@@ -134,8 +135,38 @@
     height: 3rem;
     cursor: pointer;
     text-align: center;
-    width: 94%;
-    margin: 1rem;
+    width: 100%;
+    margin: 1rem ;
     font-size: 1rem;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .container{
+        padding: 0 1rem;
+    }
+    .body{
+        flex-direction: column;
+
+    }
+    .orderedItems{
+        width: 100%;
+    }
+    .orderDetails{
+        margin-top: 16rem;
+    }
+    .nextSteps{
+        margin: 0;
+    }
+    .payMethodBtn{
+        margin: 0;
+    }
+    .similarRest{
+        display: none;
+    }
+    .footer{
+        height: 0;
+        display: none;
+    }
+    
 }

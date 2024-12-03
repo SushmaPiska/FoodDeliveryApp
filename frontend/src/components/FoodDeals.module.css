@@ -14,18 +14,22 @@
 }
 .foodDeals{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0;
     flex-wrap: wrap;
+    width: 100%;
 }
 .deal1{
     position: relative;
     list-style: none;
+    width: 26rem;
     
 
 }
 .foodDealImage{
     /* width: 27rem; */
-    width: 27rem;
+    width: 100%;
     /* width: 94%; */
     cursor: pointer;
     margin-bottom: 2rem;
@@ -59,3 +63,19 @@
     font-size: 1.45rem;
 
 }
+@media (max-width: 768px) {
+    .foodDeals{
+        /* flex-wrap: nowrap; */
+        width: fit-content;
+    }
+    .deal1{
+        /* width: ; */
+    }
+    .foodDealImage{
+        width: 100%;
+        /* display: none; */
+        /* width: 12rem;
+        height: 10rem; */
+
+    }
+  }

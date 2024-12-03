@@ -2,6 +2,10 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    margin: 0 auto;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
 }
 .container{
     /* width: 100%; */
@@ -27,6 +31,7 @@ body{
 }
 .inputContainer{
     margin: 1.2rem 0 0 0;
+   
 }
 .inputTitle{
     margin-bottom: 0.3rem;
@@ -67,5 +72,17 @@ body{
 .errorMessage{
     color: #CF3636;
     font-size: 0.9rem;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container{
+        padding: 2rem 0.5rem;
+        text-align: left;
+        font-size: 0.9rem;
+    }
+    .welcomeText{
+        font-size: 0.95rem;
+    }
   }
 

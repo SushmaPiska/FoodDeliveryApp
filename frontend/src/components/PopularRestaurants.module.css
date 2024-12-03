@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
 }
 .card{
     border-radius: 12px;
@@ -25,3 +27,14 @@
     margin: 0;
     border-radius: 0 0 12px 12px;
 }
+@media (max-width: 768px) {
+    
+    .card{
+        margin:  0.4rem;
+    }
+    .body{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+  }

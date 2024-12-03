@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import backArrow from "../assets/backArrow.png";
 import myProfilePic from "../assets/myProfilePic.png";
-import paymentCard from "../assets/paymentCard.png";
+import paymentCardIcon from "../assets/paymentCard.png";
 import editIcon from "../assets/editIcon.png";
 import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
@@ -71,12 +71,20 @@ function ProfilePage({ paymentCards, setIsPaymentCardsChanged }) {
       [name]: value,
     }));
   };
+  const getPopupWidth = () => {
+    if (window.innerWidth <= 768) {
+      return "90%";
+    } else {
+      return "40%";
+    }
+  };
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.navBar}>
+    <div className={styles.navBar}>
           <NavBar />
         </div>
+      <div className={styles.container}>
+        
         <div className={styles.body}>
           <div className={styles.header}>
             <img
@@ -89,7 +97,7 @@ function ProfilePage({ paymentCards, setIsPaymentCardsChanged }) {
           </div>
           <div className={styles.profileHead}>
             <img src={myProfilePic} alt="" />
-            <span className={styles.myName}>My Name</span>
+            <span className={styles.myName}>{profileData.fullName}</span>
             <button className={styles.editBtn} onClick={handleEditToggle}>
               {isEditModeOn ? "Save" : "Edit"}
             </button>
@@ -157,7 +165,7 @@ function ProfilePage({ paymentCards, setIsPaymentCardsChanged }) {
           <div className={styles.paymentMethods}>
             {paymentCards?.map((paymentCard, key) => (
               <div key={key} className={styles.paymentCard}>
-                <img src={paymentCard} alt="" />
+                <img src={paymentCardIcon} alt="" />
                 <div className={styles.cardNum}>
                   <p>xxxx xxxx xxxx {sliceMethod(paymentCard.cardNumber)}</p>
                   <p className={styles.lightText}>{paymentCard.nameOnCard}</p>
@@ -177,7 +185,7 @@ function ProfilePage({ paymentCards, setIsPaymentCardsChanged }) {
               modal
               nested
               className={styles.popup}
-              contentStyle={{ width: "40%" }}
+              contentStyle={{ width:getPopupWidth()}}
             >
               <EditPayMethodPopup
                 card={selectedCard}

@@ -19,12 +19,19 @@ import Cart from "../components/Cart.jsx";
 import { getFoodItems } from "../services/getFoodItems";
 import { getCartItems } from "../services/cartItemsService.js";
 
-function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,amount, productClicked}) {
-  const [isCartOpen, setIsCartOpen]=useState(false)
-  const [burgers,setBurgers]=useState([]);
-  const [fries,setFries]=useState([]);
-  const [coldDrinks,setColdDrinks]=useState([]);
-  
+function ProductPage({
+  cartItems,
+  setCartItems,
+  isCartChanged,
+  setIsCartChanged,
+  amount,
+  productClicked,
+}) {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [burgers, setBurgers] = useState([]);
+  const [fries, setFries] = useState([]);
+  const [coldDrinks, setColdDrinks] = useState([]);
+
   useEffect(() => {
     getFoodItems("Burger")
       .then((res) => setBurgers(res.data))
@@ -39,10 +46,10 @@ function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,a
 
   return (
     <>
+      <div className={styles.navBar}>
+        <NavBar setIsCartOpen={setIsCartOpen} isCartOpen={isCartOpen} />
+      </div>
       <div className={styles.container}>
-        <div className={styles.navBar}>
-          <NavBar setIsCartOpen={setIsCartOpen} isCartOpen={isCartOpen}/>
-        </div>
         <div className={styles.productAd}>
           <img src={productBack} alt="" className={styles.productBack} />
           <div className={styles.adComponent}>
@@ -87,13 +94,15 @@ function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,a
           <li className={styles.foodListItem}>Burgers</li>
           <li className={styles.foodListItem}>Fries</li>
           <li className={styles.foodListItem}>Snacks</li>
-          <li className={styles.foodListItem}>Salads</li>
-          <li className={styles.foodListItem}>Cold drinks</li>
-          <li className={styles.foodListItem}>Happy meal&reg;</li>
-          <li className={styles.foodListItem}>Desserts</li>
-          <li className={styles.foodListItem}>Hot drinks</li>
-          <li className={styles.foodListItem}>Sauces</li>
-          <li className={styles.foodListItem}>Orbit&reg;</li>
+          <div className={styles.extraMenu}>
+            <li className={styles.foodListItem}>Salads</li>
+            <li className={styles.foodListItem}>Cold drinks</li>
+            <li className={styles.foodListItem}>Happy meal&reg;</li>
+            <li className={styles.foodListItem}>Desserts</li>
+            <li className={styles.foodListItem}>Hot drinks</li>
+            <li className={styles.foodListItem}>Sauces</li>
+            <li className={styles.foodListItem}>Orbit&reg;</li>
+          </div>
         </ul>
         <div className={styles.menuBody}>
           <div className={styles.foodShow}>
@@ -102,23 +111,35 @@ function ProductPage({cartItems, setCartItems, isCartChanged, setIsCartChanged,a
             </div>
             <h1>Burgers</h1>
             <div className={styles.foodItems}>
-              <FoodItems foodItems={burgers} setIsCartChanged={setIsCartChanged}/>
+              <FoodItems
+                foodItems={burgers}
+                setIsCartChanged={setIsCartChanged}
+              />
             </div>
             <h1 className={styles.color}>Fries</h1>
             <div className={styles.foodItems}>
-              <FoodItems foodItems={fries} setIsCartChanged={setIsCartChanged}/>
+              <FoodItems
+                foodItems={fries}
+                setIsCartChanged={setIsCartChanged}
+              />
             </div>
             <h1 className={styles.color}>Cold Drinks</h1>
             <div className={styles.foodItems}>
-              <FoodItems foodItems={coldDrinks} setIsCartChanged={setIsCartChanged}/>
+              <FoodItems
+                foodItems={coldDrinks}
+                setIsCartChanged={setIsCartChanged}
+              />
             </div>
           </div>
-          {isCartOpen && 
-          <div className={styles.cart}>
-            <Cart cartItems={cartItems} setIsCartChanged={setIsCartChanged} amount={amount}/>
-          </div>
-          }
-          
+          {isCartOpen && (
+            <div className={styles.cart}>
+              <Cart
+                cartItems={cartItems}
+                setIsCartChanged={setIsCartChanged}
+                amount={amount}
+              />
+            </div>
+          )}
         </div>
         <div className={styles.moreInfo}>
           <MoreInfo />

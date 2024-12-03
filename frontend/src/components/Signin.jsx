@@ -124,7 +124,7 @@ function Signin() {
         )}
         </div>
         {backendError && <div className={styles.errorMessage}>* {backendError}</div>}
-        <p className={styles.forgotPassword}>Forgot Password?</p>
+        {/* <p className={styles.forgotPassword}>Forgot Password?</p> */}
         <button className={styles.signinBtn} onClick={handleSignin}>
           Sign in
         </button>

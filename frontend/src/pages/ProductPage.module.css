@@ -11,7 +11,8 @@
     position: fixed;
     top: 0;
     z-index: 1;
-    width: calc(100% - 12rem); 
+    /* width: calc(100% - 12rem);  */
+    width: 100%;
     
     
 
@@ -121,6 +122,12 @@
     /* width: 100%; */
     /* margin: 1rem 0 ; */
 }
+.extraMenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
 .foodListItem{
     list-style: none;
     color: white;
@@ -151,10 +158,105 @@
     width: 100%;
 }
 .reviews{
-    height: 25rem;
+    /* height: 25rem; */
     background-color: #D9D9D9;
+    border-radius: 8px;
    
 }
 .color{
     color: #FC8A06;
+}
+
+
+@media (max-width: 768px) {
+    .container{
+        padding: 0 1rem;
+        margin: 0;
+    }
+    .cart {
+        position: fixed;
+        top: 20%;
+        /* left: 0; */
+        width: 90%;
+        height: 80%; /* Adjust height for mobile */
+        background-color: #fff;
+        z-index: 1000;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        overflow-y: scroll;
+        border-radius: 12px 12px 0 0; /* Rounded top corners */
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: block;
+      }
+    .moreInfo{
+        display: none;
+    }
+    .productAd{
+        position: relative;
+        overflow: visible;
+    }
+    .adComponent{
+        flex-direction: column-reverse;
+        position: relative;
+        /* height: 50rem; */
+    }
+    
+    .leftAd{
+        position: absolute;
+        bottom: 0rem;
+        left: 1rem;
+    }
+    .rightAd{
+        position: absolute;
+        top: -46rem;
+        left: 1rem;
+        
+    }
+    .rating{
+        position: absolute;
+        bottom: -2rem;
+        left: 1rem;
+        width: 5rem;
+    }
+    .timings{
+        display: none;
+    }
+    .extraMenu{
+        display: none;
+    }
+    .productAd{
+        margin-top: 17rem;
+    }
+    .productBack{
+        height: 47rem;
+    }
+    .productAdFood{
+        width: 100%;
+        /* display: none; */
+    }
+    .featuresAd{
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+        
+    }
+    .featureAd{
+        /* width: 100%; */
+        margin: 0.7rem 0;
+        font-size: 1.5rem;
+    }
+    .searchBar{
+        display: none;
+    }
+   
 }

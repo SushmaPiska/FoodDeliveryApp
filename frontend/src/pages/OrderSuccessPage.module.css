@@ -2,7 +2,8 @@
     padding: 0 6rem;
 }
 .navBar{
-    width: calc(100% - 12rem); 
+    /* width: calc(100% - 12rem);  */
+    width: 100%;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -39,4 +40,13 @@
 .backHomeBtn{
     width: 20rem;
     font-size: 1rem;
+}
+@media (max-width: 768px) {
+    .container{
+        margin-top: 17rem;
+        padding: 0;
+    }
+    .footer{
+        display: none;
+    }
 }

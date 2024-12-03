@@ -72,10 +72,13 @@ function Footer() {
       </div>
       <div className={styles.foot}>
         <p>Order.uk Copyright 2024, All Rights Reserved.</p>
+        <div className={styles.foot2}>
         <p>Privacy Policy</p>
         <p>Terms</p>
         <p>Pricing</p>
         <p>Do not sell or share my personal information</p>
+        </div>
+        
       </div>
     </div>
   );

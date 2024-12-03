@@ -10,9 +10,6 @@ import { useNavigate } from "react-router-dom";
 function CheckoutPage({ orderedItems, amount }) {
   const navigate = useNavigate();
 
-  
-
-
   const handleBack = () => {
     navigate("/productPage");
   };
@@ -23,13 +20,12 @@ function CheckoutPage({ orderedItems, amount }) {
     navigate("/paymentPage");
   };
 
- 
   return (
     <>
+      <div className={styles.navBar}>
+        <NavBar />
+      </div>
       <div className={styles.container}>
-        <div className={styles.navBar}>
-          <NavBar />
-        </div>
         <div className={styles.orderDetails}>
           <div className={styles.header}>
             <img
@@ -61,7 +57,7 @@ function CheckoutPage({ orderedItems, amount }) {
                   <div className={styles.dividerLine}></div>
                 </>
               ))}
-              
+
               <div className={styles.notes}>
                 <p>Notes</p>
                 <input
@@ -101,7 +97,7 @@ function CheckoutPage({ orderedItems, amount }) {
               <div className={styles.dividerLine}> </div>
               <div className={styles.subTotal}>
                 <p>Subtotal ({orderedItems.length} items)</p>
-                <p className={styles.subTotalCost}>₹{amount+10}</p>
+                <p className={styles.subTotalCost}>₹{amount + 10}</p>
               </div>
               <button className={styles.payMethodBtn} onClick={handlePayment}>
                 Choose Payment Method

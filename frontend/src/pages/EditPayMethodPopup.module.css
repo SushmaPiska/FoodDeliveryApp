@@ -81,27 +81,8 @@
     opacity: 0.9;
   }
   
-  /* Responsive Design */
-  /* @media (max-width: 600px) {
-    .modal {
-      width: 90%;
-      padding: 16px;
-    }
-  
-    .modalActions {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .formGroup {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .formGroup label {
+  @media (max-width: 768px) {
+    .container{
       width: 100%;
-      text-align: left;
-      margin-bottom: 5px;
     }
-  } */
-  
+  }

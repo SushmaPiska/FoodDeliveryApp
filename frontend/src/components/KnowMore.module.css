@@ -78,6 +78,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 2rem 1rem;
   
 }
@@ -99,3 +100,42 @@
     text-align: center;
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .container{
+        padding: 0;
+        
+    }
+    .navBar{
+        text-align: center;
+        flex-direction: column;
+    }
+    .navList{
+        display: none;
+    }
+    .body{
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+    .right{
+        border-radius: 12px;
+        background-color: #03081F;
+        padding: 3rem 2rem;
+        width: 100%;
+    }
+    .card{
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+    .cardContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        
+    }
+    .bottomText{
+        color: white;
+    }
+  }

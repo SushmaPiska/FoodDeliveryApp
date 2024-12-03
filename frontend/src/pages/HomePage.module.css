@@ -7,7 +7,8 @@
     margin-top: 10rem;
 }
 .navBarr{
-    width: calc(100% - 12rem); 
+    /* width: calc(100% - 12rem);  */
+    width: 100%;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -37,10 +38,9 @@
 }
 .navBar{
     display: flex;
-   
     margin:  0;
 }
-.heading{
+.heading, .dealHeading{
     font-size: 1.9rem;
 }
 .navList{
@@ -88,14 +88,14 @@
 }
 .stats{
     width: 100%;
-    height: 6rem;
+    /* height: 6rem; */
     background: #FC8A06;
     margin-bottom: 2rem;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 .number{
     font-size: 2.5rem;
@@ -104,7 +104,128 @@
 }
 .stat1{
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
     text-align: center;
 }
+.dividerLine{
+    background-color: #D9D9D9;
+    height: 1px;
+    width: 45%;
+}
+
+/* ////////////////////////// */
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 1rem; 
+        box-sizing: border-box;
+    }
+
+    .body {
+        margin-top: 17rem; 
+    }
+
+    .navBarr {
+        width: 100%; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+
+       
+    }
+
+    .advertisement {
+        height: auto; 
+        padding: 1rem;
+        margin-bottom: 1rem; 
+    }
+
+    .people {
+        width: 100%; 
+    }
+
+    .navBar {
+        flex-direction: column; 
+    }
+
+    .listItem {
+        padding: 0.5rem;
+    }
+
+    .fastFoodBtn {
+        width: 100%; 
+    }
+
+    .getStarted,
+    .knowMore,
+    .stats {
+        border-radius: 8px;
+    }
+
+    .stats {
+        flex-direction: column; 
+        padding: 2rem 0;
+    }
+
+    .number {
+        font-size: 4rem;
+    }
+
+    .stat1 {
+        font-size: 1.7rem;
+        margin: 2rem 0;
+    }
+    .stat1 > *{
+        margin: 0;
+    }
+    .dealListItem{
+        display: none;
+        size: 0;
+    }
+    .navBar{
+        display: flex;
+        /* align-items: center; */
+
+    }
+    .navList{
+        display: inline;
+        width:10rem;
+        margin: 0;
+        padding: 0;
+    }
+    .dealHeading{
+        font-size: 1.5rem;
+        display: inline;
+        /* width: 60%; */
+        padding: 0;
+    }
+    /* .fastFoodBtn{
+        margin: 0;
+    } */
+}
+
+/* Further responsive design for very small screens */
+/* @media screen and (max-width: 480px) {
+    .heading {
+        font-size: 1.2rem; 
+    }
+
+    .listItem {
+        font-size: 0.8rem;
+        
+    }
+
+    .stats {
+        flex-direction: column; 
+        padding: 0.5rem;
+    }
+    .dealListItem{
+        display: none;
+    }
+    .navBar{
+        display: flex;
+        align-items: center;
+    }
+} */

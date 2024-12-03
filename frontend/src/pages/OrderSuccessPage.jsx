@@ -10,10 +10,11 @@ function OrderSuccessPage() {
         navigate('/home')
     }
   return (<>
-    <div className={styles.container}>
-        <div className={styles.navBar}>
+  <div className={styles.navBar}>
             <NavBar/>
         </div>
+    <div className={styles.container}>
+        
         <div className={styles.body}>
             <img src={orderSuccessIcon} alt="" className={styles.orderSuccessIcon}/>
             <p className={styles.successMsg}>Order Placed Successfully</p>

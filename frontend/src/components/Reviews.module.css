@@ -1,5 +1,5 @@
 .container{
-    padding: 0 1rem;
+    padding: 1rem;
 
 }
 
@@ -12,6 +12,9 @@
 .reviewHead{
     margin-right: auto;
     font-size: 2rem;
+}
+.prevNext{
+    display: flex;
 }
 .nextBtn{
     background-color: #FC8A06;
@@ -28,12 +31,15 @@
     display: flex;
     align-items: ccenter;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .reviewCard{
     background-color: white;
     width: 26.6rem;
     padding: 1rem;
     box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 .cardHeader{
     display: flex;
@@ -81,4 +87,10 @@
 .reviewText{
     /* font-size: 1cap;
      */
+}
+
+@media (max-width: 768px) {
+    .prevNext{
+        display: none;
+    }
 }

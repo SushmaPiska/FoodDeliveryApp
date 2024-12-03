@@ -55,7 +55,7 @@ body{
     font-size: 1rem;
     background-color: #FC8A06;
     border-radius: 2.2rem;
-   margin: 1rem 0;
+   margin: 1.5rem 0;
     cursor: pointer;
 
 }
@@ -69,5 +69,23 @@ body{
 .errorMessage{
     color: #CF3636;
     font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .container{
+        padding: 2rem 0.8rem;
+        text-align: left;
+        font-size: 0.9rem;
+    }
+    .welcomeText{
+        font-size: 1.4rem;
+    }
+    .bottomText{
+        font-size: 1.2rem;
+    }
+    /* .signinBtn{
+        padding: 1rem;
+    } */
   }
 

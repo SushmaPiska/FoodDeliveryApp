@@ -264,3 +264,11 @@
 .colored{
     color: #FC8A06;
 }
+
+@media (max-width: 768px) {
+    .container{
+        margin: 0;
+        background-color: transparent;
+        background: transparent;
+    }
+  }

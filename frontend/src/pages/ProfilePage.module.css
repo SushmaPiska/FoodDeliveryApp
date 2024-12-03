@@ -6,7 +6,8 @@
 .navBar{
     position:fixed ;
     top: 0;
-    width: calc(100% - 12rem); 
+    width: 100%;
+    /* width: calc(100% - 12rem);  */
 
 }
 .header{
@@ -23,6 +24,7 @@
 .body{
     margin: 7rem 0;
     padding: 2rem;
+    box-sizing: border-box;
     
 }
 .profileHead{
@@ -49,7 +51,7 @@
     row-gap: 2rem;
     column-gap: 2rem;
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .inputItem{
     /* margin: 2rem 0; */
@@ -100,6 +102,10 @@
     height: 1.1rem;
     cursor: pointer;
 }
+.popup{
+    width: 100%;
+
+}
 .addIcon{
     color: #FC8A06;
     background-color: #FFE8CE;
@@ -111,4 +117,46 @@
 }
 .addNewCard{
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container{
+        padding: 0;
+    }
+    .body{
+        /* padding: 0; */
+        margin-top: 12rem;
+        box-sizing: border-box;
+    }
+    .myDetails{
+        display: flex;
+        flex-direction: column;
+    }
+    .paymentMethods{
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .paymentCard{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1rem;
+        padding: 1rem ;
+        box-sizing: border-box;
+        justify-content: flex-start;
+    }
+    .addNewCard{
+        width: 100%;
+        padding:1rem  ;
+        box-sizing: border-box;
+    }
+    .editIcon{
+        margin-left: auto;
+    }
+    .popup{
+        width: 100%;
+    }
+    .footer{
+        display: none;
+    }
 }

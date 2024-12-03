@@ -92,7 +92,7 @@ function Signup() {
     <div className={styles.container}>
       <img src={logo} alt="" className={styles.logo} />
       <div className={styles.body}>
-        <h2 className={styles.head}>Welcome Back 👋</h2>
+        <h2 className={styles.head}>Welcome 👋</h2>
         <p className={styles.welcomeText}>
           Today is a new day. It's your day. You shape it. Sign in to start
           ordering.
