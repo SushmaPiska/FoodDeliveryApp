@@ -10,6 +10,7 @@ import KnowMore from "../components/KnowMore";
 import people from "../assets/people.png";
 import logo from "../assets/logo.png";
 import appStore from "../assets/appStore.png";
+import ShowCase from "../components/ShowCase";
 function HomePage({ setProductClicked }) {
   return (
     <>
@@ -19,7 +20,9 @@ function HomePage({ setProductClicked }) {
       <div className={styles.container}>
         
         <div className={styles.body}>
-          <div className={styles.showCase}></div>
+          <div className={styles.showCase}>
+            <ShowCase/>
+          </div>
           <div className={styles.deals}>
             <div className={styles.navBar}>
               <h2 className={styles.dealHeading}>
@@ -54,15 +57,15 @@ function HomePage({ setProductClicked }) {
             </div>
             <div className={styles.rightAd}>
               <div className={styles.adHead}>
-                <img src={logo} alt="" />
+                <img src={logo} alt="" className={styles.logoAd}/>
                 <h1>ing is more</h1>
               </div>
 
               <p className={styles.adSubHead}>
-                <span className={styles.adSubHead1}>Personalised</span> &
+                <span className={styles.adSubHead1}><u>Personalised</u></span> &
                 Instant
               </p>
-              <p>Download the Order.uk app for faster ordering</p>
+              <p className={styles.p}>Download the Order.uk app for faster ordering</p>
               <img src={appStore} alt="" />
             </div>
           </div>
@@ -84,16 +87,12 @@ function HomePage({ setProductClicked }) {
               <p className={styles.number}>789,900+</p>
               <p>Orders Delivered</p>
             </div>
-            <div className={styles.dividerLine}>
-
-            </div>
+            <div className={styles.dividerLine}></div>
             <div className={styles.stat1}>
               <p className={styles.number}>690+</p>
               <p>Restaurants Partnered</p>
             </div>
-            <div className={styles.dividerLine}>
-
-            </div>
+            <div className={styles.dividerLine}></div>
             <div className={styles.stat1}>
               <p className={styles.number}>17,457+</p>
               <p>Food items</p>

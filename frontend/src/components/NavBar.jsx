@@ -39,7 +39,7 @@ function NavBar({ setIsCartOpen, isCartOpen }) {
   const userName = user && user.name ? user.name : "Guest";
 
   const location = useLocation();
-  console.log(location.pathname);
+  // console.log(location.pathname);
 
   return (
     <div className={styles.container}>

@@ -85,7 +85,7 @@ function ProductPage({
           <h2>All Offers from {productClicked}</h2>
           <div className={styles.search}>
             <img src={searchIcon} alt="" className={styles.searchIcon} />
-            <p>Search from menu...</p>
+            <input type="text" placeholder="Search from menu..." className={styles.searchInput}/>
           </div>
         </div>
         <div className="foodMenu"></div>
@@ -144,7 +144,9 @@ function ProductPage({
         <div className={styles.moreInfo}>
           <MoreInfo />
         </div>
-        <div className={styles.map}>{/* <Map/> */}</div>
+        <div className={styles.map}>
+          {/* <Map/>  */}
+        </div>
         <div className={styles.reviews}>
           <Reviews />
         </div>

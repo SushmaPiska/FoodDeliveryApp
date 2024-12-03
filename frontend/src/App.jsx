@@ -15,6 +15,7 @@ import { getCartItems } from "./services/cartItemsService";
 import { getAddresses } from "./services/addressService.js";
 import { getPaymentCards } from "./services/paymentCardService.js";
 import ScrollToTop from "./components/scrollToTop.jsx";
+import Cart from "./components/Cart.jsx";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [isCartChanged, setIsCartChanged] = useState(false);
@@ -107,6 +108,7 @@ function App() {
             />
           }
         />
+        <Route path="cartDetails" element={<Cart/>} />
       </Routes>
 
       {/* <HomePage/> */}

@@ -112,6 +112,10 @@
     height: 2.4rem;
     margin-right: 1rem;
 }
+.searchInput{
+    border: none;
+    outline: none;
+}
 .foodMenu{
     display: flex;
     background-color: #FC8A06;
@@ -154,7 +158,7 @@
     width: 30%;
 }
 .map{
-    height: 20rem;
+    /* height: 20rem; */
     width: 100%;
 }
 .reviews{

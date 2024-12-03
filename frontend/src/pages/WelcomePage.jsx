@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './WelcomePage.module.css'
-import homeFood from "../assets/homeFood.png";
+// import homeFood from "../assets/homeFood.png";
+
 import Signup from "../components/Signup";
 import Signin from "../components/Signin";
 import Footer from "../components/Footer";
@@ -17,7 +18,7 @@ function WelcomePage() {
           {/* <Signup/> */}
         </div>
         <div className={styles.rightContainer}>
-          <img src={homeFood} alt="" className={styles.homeFoodImg} />
+          <img src="https://res.cloudinary.com/dkyvmoyh5/image/upload/v1732184429/Group_8_1_wrwkob.png" alt="" className={styles.homeFoodImg} />
         </div>
       </div>
       <div className={styles.footer}>

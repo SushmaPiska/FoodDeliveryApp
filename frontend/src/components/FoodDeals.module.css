@@ -15,7 +15,7 @@
 .foodDeals{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 0;
     flex-wrap: wrap;
     width: 100%;
@@ -24,6 +24,7 @@
     position: relative;
     list-style: none;
     width: 26rem;
+    margin-right: 1rem;
     
 
 }

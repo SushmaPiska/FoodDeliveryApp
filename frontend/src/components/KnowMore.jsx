@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./KnowMore.module.css";
 import orderFood from "../assets/orderFood.png";
+import track from "../assets/track.png";
+import getOrder from "../assets/getOrder.png";
 function KnowMore() {
   return (
     <div className={styles.container}>
@@ -34,12 +36,12 @@ function KnowMore() {
             </div>
             <div className={styles.card}>
               <p className={styles.cardTitle}>Track Progress</p>
-              <img src={orderFood} alt="" />
+              <img src={track} alt="" />
               <p>Place order through our website or Mobile app</p>
             </div>
             <div className={styles.card}>
               <p className={styles.cardTitle}>Get your Order!</p>
-              <img src={orderFood} alt="" />
+              <img src={getOrder} alt="" />
               <p>Place order through our website or Mobile app</p>
             </div>
           </div>

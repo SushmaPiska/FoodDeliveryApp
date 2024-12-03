@@ -54,7 +54,7 @@
 .left{
     /* width: 30rem; */
     text-align: center;
-    max-width: 22rem;
+    max-width: 20rem;
     padding: 4rem;
     font-size: 1rem;
     font-weight: 600;
@@ -78,8 +78,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 2rem 1rem;
+    /* flex-wrap: wrap; */
+    /* margin: 2rem 1rem; */
   
 }
 .card{
@@ -99,6 +99,7 @@
     margin: auto;
     text-align: center;
     font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {

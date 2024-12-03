@@ -18,20 +18,23 @@
     width: 50%;
     height: 100%;
     padding: 2rem 0;
+
     /* background-color: bisque; */
 
 }
 .rightContainer{
     flex: 1;
     padding: 1rem 2rem;
+    width: 100%;
     /* background-color: blueviolet; */
 
 }
 .homeFoodImg {
     width: 100%; 
-    height: auto; 
+    height: 100%; 
     max-width: 35rem; 
     object-fit: cover; 
+    border-radius: 12px;
 }
 .footer{
     width: 100%;

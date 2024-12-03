@@ -10,11 +10,11 @@ import newStore from "../assets/newStore.png";
 import checkoutIcon from "../assets/checkoutIcon.png";
 import { useNavigate } from "react-router-dom";
 import { deleteCartItem } from "../services/cartItemsService";
+// import "./CopyLink.css";
 
 function Cart({ cartItems, setIsCartChanged, amount }) {
   const navigate = useNavigate();
-
-  
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handleDeleteCartItem = async (cartItem) => {
     try {
@@ -35,12 +35,32 @@ function Cart({ cartItems, setIsCartChanged, amount }) {
       navigate("/checkout");
     }
   };
+  const handleShare = async () => {
+    try {
+      const BASE_URL =
+        import.meta.env.MODE === "development"
+          ? "http://localhost:5173"
+          : "https://fooddeliveryapp-24lz.onrender.com";
+
+      const link = `${BASE_URL}/cartDetails`;
+      await navigator.clipboard.writeText(link);
+      setShowTooltip(true);
+      setTimeout(() => setShowTooltip(false), 5000);
+      
+    } catch (error) {
+      console.error("failed to copy link" + error);
+      
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.shareCart}>
         <img src={shareIcon} alt="" className={styles.shareIcon} />
         <p>Share this cart with your friends</p>
-        <button className={styles.copyBtn}>Copy Link</button>
+        <button className={styles.copyBtn} onClick={handleShare} onMouseLeave={() => setShowTooltip(false)}>Copy Link 
+        </button>
+        {showTooltip && <span className="tooltip">Link Copied!</span>}
+        
       </div>
       <div className={styles.basket}>
         <div className={styles.basketHead}>
@@ -109,7 +129,7 @@ function Cart({ cartItems, setIsCartChanged, amount }) {
         <div className={styles.checkoutContainer}>
           <div
             className={amount >= 20 ? styles.checkout : styles.checkoutDisabled}
-            onClick={amount >= 20 ? handleCheckout : null} // Disable click if amount < 20
+            onClick={amount >= 20 ? handleCheckout : null} 
           >
             <img src={checkoutIcon} alt="" className={styles.checkoutIcon} />
             <p>Checkout!</p>
