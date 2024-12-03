@@ -103,8 +103,14 @@
     /* margin: auto; */
     text-align: center;
 }
-.navItem:hover{
+/* .navItem:hover{
     background-color: rgb(246, 248, 248);
+} */
+.active{
+  background-color: #FC8A06;
+  color: white;
+  border-radius: 120px;
+  padding: 0.5rem 0;
 }
 .loginBtn{
     border: none;

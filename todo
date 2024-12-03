@@ -1,11 +1,11 @@
 customer reviews from db
-navbar landing color
-if already loggedin, direct to home page, /home directs to home page without login
-remove forget password
+
 make search field functional
 payment card in checkout page
+
 login/signup page image from backend
+
 not changing the size of login page  in case of errors
 cart should be specific  to user
-if not loggrd in, cannot go to product page
-updateAddress pending, check address.conntroller.js
+
+navitems inside hamburger icon in mobile view

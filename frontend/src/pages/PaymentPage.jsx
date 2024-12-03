@@ -11,7 +11,13 @@ function PaymentPage() {
     navigate("/checkout");
   };
   const handleProceedPayment=()=>{
-        navigate('/orderSuccessPage')
+    const token = localStorage.getItem("token"); 
+    if(!token){
+      navigate('/signin')
+    }else{
+      navigate('/orderSuccessPage')
+
+    }
   }
   return (
     

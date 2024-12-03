@@ -28,7 +28,12 @@ function Cart({ cartItems, setIsCartChanged, amount }) {
   };
 
   const handleCheckout = () => {
-    navigate("/checkout");
+    const token = localStorage.getItem("token"); 
+    if(!token){
+      navigate('/signin')
+    }else{
+      navigate("/checkout");
+    }
   };
   return (
     <div className={styles.container}>

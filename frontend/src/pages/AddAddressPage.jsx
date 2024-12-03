@@ -11,7 +11,7 @@ import AddAddressPopup from "./AddAddressPopup";
 import { deleteAddress } from "../services/addressService";
 import { AddressContext } from "../context/AddressContext";
 
-function AddAddressPage({   }) {
+function AddAddressPage({ }) {
   const navigate = useNavigate();
   const [isAddAddressPopupOpen, setIsAddAddressPopupOpen] = useState(false);
 
@@ -21,7 +21,13 @@ function AddAddressPage({   }) {
   const userName = user && user.name ? user.name : "Guest";
 
   const handleBack = () => {
-    navigate("/checkout");
+    const token = localStorage.getItem("token"); 
+    if(!token){
+      navigate('/signin')
+    }else{
+
+      navigate("/checkout");
+    }
   };
   const openAddAddressPopup = (address=null) => {
     setIsAddAddressPopupOpen(true);

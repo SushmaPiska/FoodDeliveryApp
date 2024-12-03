@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./CheckoutPage.module.css";
 import NavBar from "../components/NavBar";
 import backArrow from "../assets/backArrow.png";
@@ -7,6 +7,9 @@ import locationIcon from "../assets/locationIcon.png";
 import PopularRestaurants from "../components/PopularRestaurants";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { AddressContext } from "../context/AddressContext";
+
+
 function CheckoutPage({ orderedItems, amount }) {
   const navigate = useNavigate();
 
@@ -19,6 +22,10 @@ function CheckoutPage({ orderedItems, amount }) {
   const handlePayment = () => {
     navigate("/paymentPage");
   };
+  
+
+  let {addresses, setIsAddressChanged}  = useContext(AddressContext);
+  const defaultAddress =addresses[0]?.fullAddress || "Set Your Location";
 
   return (
     <>
@@ -80,7 +87,7 @@ function CheckoutPage({ orderedItems, amount }) {
                 <div className={styles.address}>
                   <p>Delivery Address</p>
                   <p className={styles.addOnAddress}>
-                    45, Green Street, Sector 12...
+                    {defaultAddress}
                   </p>
                 </div>
                 <p className={styles.greaterThanIcon}>&gt;</p>
